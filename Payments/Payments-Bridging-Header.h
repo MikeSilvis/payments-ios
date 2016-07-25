@@ -5,3 +5,4 @@
 
 #import "Masonry.h"
 #import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"

@@ -10,6 +10,7 @@ import UIKit
 
 enum PAEventState : Int {
     case Sent
+    case Pending
     case Received
     
     func color() -> UIColor {
@@ -18,6 +19,8 @@ enum PAEventState : Int {
             return .redColor()
         case .Received:
             return .greenColor()
+        case .Pending:
+            return .clearColor()
         }
     }
 }
@@ -29,9 +32,9 @@ struct PAFriend {
 
 struct PAEvent {
     var description     : String
-    var amount_cents      : NSNumber
-    var avatars     : [String]
-    var state       : PAEventState = .Sent
+    var amount_cents    : NSNumber
+    var avatars         : [String]
+    var state           : PAEventState = .Sent
     
     func dollarAmount() -> String {
         return "$\(amount_cents.floatValue / 100)"

@@ -30,32 +30,34 @@ class PAHistoryCell: UITableViewCell {
             }
             
             for avatar in event.avatars {
-                PAHttpRequest.fetchImage(avatar, completion: { [weak self] (success, image) in
-                    let kDefaultImageSize : CGFloat = 32
-                    
-                    let image = UIImageView(image: image)
-                    image.clipsToBounds = true
-                    image.contentMode = .ScaleAspectFill
-                    image.cornerRadius = kDefaultImageSize / 2
-                    image.borderColor = UIColor.lightGrayColor()
-                    image.borderWidth = 0.5
-                    image.frame = CGRect(x: 0, y: 0, width: kDefaultImageSize, height: kDefaultImageSize)
-                    
-                    let snapShotImageView = UIImageView(image: image.snapshot())
-                    snapShotImageView.shadowOpacity = 0.4
-                    snapShotImageView.shadowColor = .blackColor()
-                    snapShotImageView.shadowOffset = CGSize(width: 1, height: 1)
-                    snapShotImageView.shadowRadius = 1
-                    
-                    
-                    snapShotImageView.mas_remakeConstraints({ (make) in
-                        make.height.mas_equalTo()(kDefaultImageSize)
-                        make.width.mas_equalTo()(kDefaultImageSize)
-                    })
-                    
-                    self?.avatarStackView?.addArrangedSubview(snapShotImageView)
-                    
-                })
+//                PAHttpRequest.fetchImage(avatar, completion: { [weak self] (success, image) in
+//                    let kDefaultImageSize : CGFloat = 32
+                
+//                    let image = UIImageView(image: image)
+//                    image.clipsToBounds = true
+//                    image.contentMode = .ScaleAspectFill
+//                    image.cornerRadius = kDefaultImageSize / 2
+//                    image.borderColor = UIColor.lightGrayColor()
+//                    image.borderWidth = 0.5
+//                    image.frame = CGRect(x: 0, y: 0, width: kDefaultImageSize, height: kDefaultImageSize)
+//                    
+//                    let snapShotImageView = UIImageView(image: image.snapshot())
+//                    snapShotImageView.shadowOpacity = 0.4
+//                    snapShotImageView.shadowColor = .blackColor()
+//                    snapShotImageView.shadowOffset = CGSize(width: 1, height: 1)
+//                    snapShotImageView.shadowRadius = 1
+//                    
+//                    snapShotImageView.mas_remakeConstraints({ (make) in
+//                        make.height.mas_equalTo()(kDefaultImageSize)
+//                        make.width.mas_equalTo()(kDefaultImageSize)
+//                    })
+//                    
+//                    self?.avatarStackView?.addArrangedSubview(snapShotImageView)
+//                    self?.avatarStackView?.addArrangedSubview(P)
+                    let avatarView = PAAvatarView()
+                    avatarView.friend = PAFriend(name: "", profilePicture: NSURL(string : avatar)!)
+                    avatarStackView?.addSubview(avatarView)
+//                })
             }
         }
     }

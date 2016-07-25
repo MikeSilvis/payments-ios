@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		29EE524965F6B5BB04DF67FC /* libPods-Payments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0BC647D20E35786BB12E73 /* libPods-Payments.a */; };
 		364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647779F1D467E8C000B5144 /* extension-UIView.swift */; };
+		364777A21D46898A000B5144 /* PAFeedCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A11D46898A000B5144 /* PAFeedCVC.swift */; };
+		364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A51D468BD3000B5144 /* PAEventRequestCell.swift */; };
+		364777A91D469163000B5144 /* PAAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A81D469163000B5144 /* PAAvatarView.swift */; };
+		364777AB1D469178000B5144 /* PAAvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364777AA1D469178000B5144 /* PAAvatarView.xib */; };
 		369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB38A1D465932002F8ADC /* AppDelegate.swift */; };
 		369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB38C1D465932002F8ADC /* PARequestVC.swift */; };
 		369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB38E1D465932002F8ADC /* PAProfileVC.swift */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		3647779F1D467E8C000B5144 /* extension-UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension-UIView.swift"; sourceTree = "<group>"; };
+		364777A11D46898A000B5144 /* PAFeedCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedCVC.swift; sourceTree = "<group>"; };
+		364777A51D468BD3000B5144 /* PAEventRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAEventRequestCell.swift; sourceTree = "<group>"; };
+		364777A81D469163000B5144 /* PAAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAAvatarView.swift; sourceTree = "<group>"; };
+		364777AA1D469178000B5144 /* PAAvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAAvatarView.xib; sourceTree = "<group>"; };
 		369FB3871D465932002F8ADC /* Payments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369FB38A1D465932002F8ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		369FB38C1D465932002F8ADC /* PARequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PARequestVC.swift; sourceTree = "<group>"; };
@@ -65,6 +73,15 @@
 				3647779F1D467E8C000B5144 /* extension-UIView.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		364777A71D469152000B5144 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				364777A81D469163000B5144 /* PAAvatarView.swift */,
+				364777AA1D469178000B5144 /* PAAvatarView.xib */,
+			);
+			name = Avatar;
 			sourceTree = "<group>";
 		};
 		369FB37E1D465932002F8ADC = {
@@ -110,6 +127,7 @@
 				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
 				369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */,
 				369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */,
+				364777A11D46898A000B5144 /* PAFeedCVC.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -118,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */,
+				364777A51D468BD3000B5144 /* PAEventRequestCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -135,6 +154,7 @@
 		369FB3AD1D467A16002F8ADC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				364777A71D469152000B5144 /* Avatar */,
 				369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */,
 			);
 			name = Helpers;
@@ -218,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364777AB1D469178000B5144 /* PAAvatarView.xib in Resources */,
 				369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */,
 				369FB3941D465932002F8ADC /* Assets.xcassets in Resources */,
 				369FB3921D465932002F8ADC /* Main.storyboard in Resources */,
@@ -281,15 +302,18 @@
 			files = (
 				369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */,
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
+				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */,
 				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
 				369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
+				364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */,
 				369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */,
 				369FB3AF1D467A20002F8ADC /* PADesignableControl.swift in Sources */,
 				369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */,
 				364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */,
+				364777A21D46898A000B5144 /* PAFeedCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ class PAUser: NSObject {
     typealias PAEventCreateCompletion = (success : Bool) -> ()
     
     func findEvents(completion: PAEventGetCompletion) {
-        PAHttpRequest.fetchJSON("events/history") { (success, json) in
+        PAHttpRequest.dispatchGetRequest("events/history", params: [:]) { (success, json) in
             var allEvents : [PAEvent] = []
                 
             if let events = json["events"] as? [[String : AnyObject]] {
@@ -31,13 +31,14 @@ class PAUser: NSObject {
                 }
             }
             
-            completion(success: true, events: allEvents)
+            completion(success: success, events: allEvents)
         }
     }
     
     func createEvent(event : PAEvent, completion : PAEventCreateCompletion) {
-        PAHttpRequest.postJSON("events", params: event.asJSON()) { (success, json) in
-            print("json response is: \(json)")
+        PAHttpRequest.dispatchPostRequest("events", params: event.asJSON()) { (success, json) in
+            print("Json response is: \(json)")
+            
         }
     }
     
