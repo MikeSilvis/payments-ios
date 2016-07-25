@@ -3,4 +3,5 @@ inhibit_all_warnings!
 
 target 'Payments' do
   pod 'Masonry'
+  pod 'AFNetworking'
 end

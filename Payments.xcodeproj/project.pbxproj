@@ -135,17 +135,9 @@
 		369FB3AD1D467A16002F8ADC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				369FB3B01D467A4C002F8ADC /* Avatar */,
 				369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		369FB3B01D467A4C002F8ADC /* Avatar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Avatar;
 			sourceTree = "<group>";
 		};
 		60AF6A9C087B70E5953A5454 /* Frameworks */ = {

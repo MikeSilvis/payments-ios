@@ -28,8 +28,19 @@ struct PAFriend {
 }
 
 struct PAEvent {
-    var description : String
-    var amount      : NSNumber
+    var description     : String
+    var amount_cents      : NSNumber
     var avatars     : [String]
     var state       : PAEventState = .Sent
+    
+    func dollarAmount() -> String {
+        return "$\(amount_cents)"
+    }
+    
+    func asJSON() -> [String : AnyObject] {
+        return [
+            "name"         : description,
+            "amount_cents" : amount_cents
+        ]
+    }
 }

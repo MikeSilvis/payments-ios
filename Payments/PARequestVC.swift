@@ -9,15 +9,18 @@
 import UIKit
 
 class PARequestVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet private weak var dollarAmountLabel: UITextField!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var descriptionTextView: UITextView?
+    
+    @IBAction private func didTapRequest(sender: AnyObject) {
+        guard let dollarAmount = dollarAmountLabel?.text, let text = descriptionTextView?.text else { return }
+        
+        let event = PAEvent(description: text, amount_cents: NSNumber(int: Int32(dollarAmount)!), avatars: [], state: .Sent)
+        
+        PAUser.currentUser.createEvent(event) { (success) in
+            
+        }
     }
 
 

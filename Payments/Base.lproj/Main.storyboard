@@ -190,6 +190,9 @@
                                         <state key="normal" title="Request">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapRequest:" destination="9pv-A4-QxB" eventType="touchUpInside" id="u2i-FA-jpj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -203,6 +206,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Payments" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" title="Request" id="xwc-P4-SuY"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="nbf-6u-XWx" id="uFg-aW-KkO"/>
+                        <outlet property="descriptionTextView" destination="iYr-L3-pOb" id="qxd-5W-xGC"/>
+                        <outlet property="dollarAmountLabel" destination="mpf-fU-fNe" id="ns7-uO-DSU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

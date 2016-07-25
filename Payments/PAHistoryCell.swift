@@ -21,7 +21,7 @@ class PAHistoryCell: UITableViewCell {
         didSet {
             guard let event = event else { return }
             
-            amountLabel?.text = "$\(event.amount)"
+            amountLabel?.text = event.dollarAmount()
             descriptionLabel?.text = event.description
             amountLabel?.textColor = event.state.color()
             
