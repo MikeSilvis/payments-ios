@@ -9,12 +9,19 @@
 import UIKit
 
 class PAHistoryTVC: UITableViewController {
+    var events : [PAEvent] = [] {
+        didSet {
+            dispatch_async(dispatch_get_main_queue()) { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PAUser.currentUser.findEvents { (success, events) in
-            
+        PAUser.currentUser.findEvents { [weak self] (success, events) in
+            self?.events = events
         }
     }
 
@@ -25,21 +32,14 @@ class PAHistoryTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return histories().count
+        return events.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath) as! PAHistoryCell
-        cell.history = histories()[indexPath.row]
+        cell.event = events[indexPath.row]
 
         return cell
-    }
-    
-    private func histories() -> [PAHistory] {
-        return [
-            PAHistory(description: "for all the Tequilla", amount: "23", state: .Received, friends: []),
-            PAHistory(description: "for all the booz", amount: "123", state: .Sent, friends: [])
-        ]
     }
 
 }

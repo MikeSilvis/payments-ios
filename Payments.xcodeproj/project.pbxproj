@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29EE524965F6B5BB04DF67FC /* libPods-Payments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0BC647D20E35786BB12E73 /* libPods-Payments.a */; };
 		369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB38A1D465932002F8ADC /* AppDelegate.swift */; };
 		369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB38C1D465932002F8ADC /* PARequestVC.swift */; };
 		369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB38E1D465932002F8ADC /* PAProfileVC.swift */; };
@@ -18,6 +19,8 @@
 		369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */; };
 		369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A71D466DF5002F8ADC /* PAUser.swift */; };
 		369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A91D466E03002F8ADC /* PAEvent.swift */; };
+		369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3AB1D4676DD002F8ADC /* PAHttpRequest.swift */; };
+		369FB3AF1D467A20002F8ADC /* PADesignableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryCell.swift; sourceTree = "<group>"; };
 		369FB3A71D466DF5002F8ADC /* PAUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAUser.swift; sourceTree = "<group>"; };
 		369FB3A91D466E03002F8ADC /* PAEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAEvent.swift; sourceTree = "<group>"; };
+		369FB3AB1D4676DD002F8ADC /* PAHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHttpRequest.swift; sourceTree = "<group>"; };
+		369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PADesignableControl.swift; sourceTree = "<group>"; };
+		369FB3B41D467AA0002F8ADC /* Payments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Payments-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A0BC647D20E35786BB12E73 /* libPods-Payments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Payments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
+		B3B066F6A9C76B79843CB145 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EE524965F6B5BB04DF67FC /* libPods-Payments.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +62,8 @@
 			children = (
 				369FB3891D465932002F8ADC /* Payments */,
 				369FB3881D465932002F8ADC /* Products */,
+				8C0D9511326E5751DB847E91 /* Pods */,
+				60AF6A9C087B70E5953A5454 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +84,7 @@
 				369FB3931D465932002F8ADC /* Assets.xcassets */,
 				369FB3951D465932002F8ADC /* LaunchScreen.storyboard */,
 				369FB3981D465932002F8ADC /* Info.plist */,
+				369FB3B41D467AA0002F8ADC /* Payments-Bridging-Header.h */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -79,6 +92,7 @@
 		369FB39E1D466403002F8ADC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				369FB3AD1D467A16002F8ADC /* Helpers */,
 				369FB3A61D466DE1002F8ADC /* Models */,
 				369FB3A31D466740002F8ADC /* Cells */,
 				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
@@ -102,8 +116,42 @@
 			children = (
 				369FB3A71D466DF5002F8ADC /* PAUser.swift */,
 				369FB3A91D466E03002F8ADC /* PAEvent.swift */,
+				369FB3AB1D4676DD002F8ADC /* PAHttpRequest.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		369FB3AD1D467A16002F8ADC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				369FB3B01D467A4C002F8ADC /* Avatar */,
+				369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		369FB3B01D467A4C002F8ADC /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Avatar;
+			sourceTree = "<group>";
+		};
+		60AF6A9C087B70E5953A5454 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A0BC647D20E35786BB12E73 /* libPods-Payments.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C0D9511326E5751DB847E91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3B066F6A9C76B79843CB145 /* Pods-Payments.debug.xcconfig */,
+				5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 369FB39B1D465932002F8ADC /* Build configuration list for PBXNativeTarget "Payments" */;
 			buildPhases = (
+				AD15201459160247C0FDE9D9 /* [CP] Check Pods Manifest.lock */,
 				369FB3831D465932002F8ADC /* Sources */,
 				369FB3841D465932002F8ADC /* Frameworks */,
 				369FB3851D465932002F8ADC /* Resources */,
+				CD9C3391E2F5C405B2D20EC9 /* [CP] Embed Pods Frameworks */,
+				C0C8F5B3DE0DBF8990A1F1D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,11 +223,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD15201459160247C0FDE9D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0C8F5B3DE0DBF8990A1F1D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Payments/Pods-Payments-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD9C3391E2F5C405B2D20EC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Payments/Pods-Payments-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		369FB3831D465932002F8ADC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */,
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */,
@@ -184,6 +284,7 @@
 				369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
 				369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */,
+				369FB3AF1D467A20002F8ADC /* PADesignableControl.swift in Sources */,
 				369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,23 +398,30 @@
 		};
 		369FB39C1D465932002F8ADC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3B066F6A9C76B79843CB145 /* Pods-Payments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Payments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = silvisions.Payments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Payments/Payments-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		369FB39D1D465932002F8ADC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Payments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = silvisions.Payments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Payments/Payments-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -336,6 +444,7 @@
 				369FB39D1D465932002F8ADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

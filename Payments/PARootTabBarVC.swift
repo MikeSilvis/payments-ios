@@ -19,7 +19,7 @@ class PARootTabBarVC: UITabBarController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        addAlert()
+//        addAlert()
     }
     
     private func addAlert() {

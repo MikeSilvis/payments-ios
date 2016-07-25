@@ -8,32 +8,6 @@
 
 import UIKit
 
-enum PAHistoryCellState : Int {
-    case Sent
-    case Received
-    
-    func color() -> UIColor {
-        switch self {
-        case .Sent:
-            return .redColor()
-        case .Received:
-            return .greenColor()
-        }
-    }
-}
-
-struct PAHistory {
-    var description : String
-    var amount      : String
-    var state       : PAHistoryCellState
-    var friends     : [PAFriend]
-}
-
-struct PAFriend {
-    var name           : String
-    var profilePicture : NSURL
-}
-
 class PAHistoryCell: UITableViewCell {
     @IBOutlet private weak var amountLabel: UILabel?
     @IBOutlet private weak var descriptionLabel: UILabel?
@@ -43,21 +17,37 @@ class PAHistoryCell: UITableViewCell {
         }
     }
     
-    var history : PAHistory? {
+    var event : PAEvent? {
         didSet {
-            guard let history = history else { return }
+            guard let event = event else { return }
             
-            amountLabel?.text = "$\(history.amount)"
-            descriptionLabel?.text = history.description
-            amountLabel?.textColor = history.state.color()
+            amountLabel?.text = "$\(event.amount)"
+            descriptionLabel?.text = event.description
+            amountLabel?.textColor = event.state.color()
             
-            // TODO : Listen to people
+            for view in (avatarStackView?.subviews ?? []) {
+                view.removeFromSuperview()
+            }
+            
+            for avatar in event.avatars {
+                PAHttpRequest.fetchImage(avatar, completion: { [weak self] (success, image) in
+                    let kDefaultImageSize : CGFloat = 32
+                    
+                    let image = UIImageView(image: image)
+                    image.clipsToBounds = true
+                    image.contentMode = .ScaleAspectFill
+                    image.layer.cornerRadius = kDefaultImageSize / 2
+                    
+                    image.mas_remakeConstraints({ (make) in
+                        make.height.mas_equalTo()(kDefaultImageSize)
+                        make.width.mas_equalTo()(kDefaultImageSize)
+                    })
+                    
+                    self?.avatarStackView?.addArrangedSubview(image)
+                    
+                })
+            }
         }
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
 
 }
