@@ -13,6 +13,9 @@
 		369FB3921D465932002F8ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3901D465932002F8ADC /* Main.storyboard */; };
 		369FB3941D465932002F8ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3931D465932002F8ADC /* Assets.xcassets */; };
 		369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3951D465932002F8ADC /* LaunchScreen.storyboard */; };
+		369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */; };
+		369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */; };
+		369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		369FB3931D465932002F8ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		369FB3961D465932002F8ADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		369FB3981D465932002F8ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARootTabBarVC.swift; sourceTree = "<group>"; };
+		369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryTVC.swift; sourceTree = "<group>"; };
+		369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,34 @@
 		369FB3891D465932002F8ADC /* Payments */ = {
 			isa = PBXGroup;
 			children = (
+				369FB39E1D466403002F8ADC /* Classes */,
 				369FB38A1D465932002F8ADC /* AppDelegate.swift */,
-				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
-				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
 				369FB3901D465932002F8ADC /* Main.storyboard */,
 				369FB3931D465932002F8ADC /* Assets.xcassets */,
 				369FB3951D465932002F8ADC /* LaunchScreen.storyboard */,
 				369FB3981D465932002F8ADC /* Info.plist */,
 			);
 			path = Payments;
+			sourceTree = "<group>";
+		};
+		369FB39E1D466403002F8ADC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				369FB3A31D466740002F8ADC /* Cells */,
+				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
+				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
+				369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */,
+				369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		369FB3A31D466740002F8ADC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
+				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
+				369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */,
+				369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
 				369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */,
 			);
