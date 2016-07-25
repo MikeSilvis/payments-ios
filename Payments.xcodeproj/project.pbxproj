@@ -16,6 +16,8 @@
 		369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */; };
 		369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */; };
 		369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */; };
+		369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A71D466DF5002F8ADC /* PAUser.swift */; };
+		369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A91D466E03002F8ADC /* PAEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARootTabBarVC.swift; sourceTree = "<group>"; };
 		369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryTVC.swift; sourceTree = "<group>"; };
 		369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryCell.swift; sourceTree = "<group>"; };
+		369FB3A71D466DF5002F8ADC /* PAUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAUser.swift; sourceTree = "<group>"; };
+		369FB3A91D466E03002F8ADC /* PAEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		369FB39E1D466403002F8ADC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				369FB3A61D466DE1002F8ADC /* Models */,
 				369FB3A31D466740002F8ADC /* Cells */,
 				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
 				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
@@ -90,6 +95,15 @@
 				369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		369FB3A61D466DE1002F8ADC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				369FB3A71D466DF5002F8ADC /* PAUser.swift */,
+				369FB3A91D466E03002F8ADC /* PAEvent.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +180,11 @@
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */,
+				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
 				369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
 				369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */,
+				369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

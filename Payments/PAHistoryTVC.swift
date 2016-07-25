@@ -9,6 +9,14 @@
 import UIKit
 
 class PAHistoryTVC: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        PAUser.currentUser.findEvents { (success, events) in
+            
+        }
+    }
 
     // MARK: - Table view data source
 
