@@ -15,29 +15,23 @@ class PAUser: NSObject {
     typealias PAEventCompletion = (success : Bool, events : [PAEvent]) -> ()
     
     func findEvents(completion: PAEventCompletion) {
-        let request = NSMutableURLRequest(URL: NSURL(string:"http://fahim.mac:3031/events/history")!, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20)
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, respone, error) in
-            do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+        PAHttpRequest.fetchJSON("events/history") { (success, json) in
+            var allEvents : [PAEvent] = []
                 
-                var allEvents : [PAEvent] = []
-                
-                if let events = json?.objectForKey("events") as? [[String : AnyObject]] {
-                    for event in events {
-                        let paEvent = PAEvent(description: event["description"] as! String, amount: event["amount"] as! NSNumber, avatars: event["avatars"] as! [String], state: .Sent)
-                        allEvents.append(paEvent)
-                    }
+            if let events = json["events"] as? [[String : AnyObject]] {
+                for event in events {
+                    let paEvent = PAEvent(description: event["description"] as! String,
+                                               amount: event["amount"] as! NSNumber,
+                                              avatars: event["avatars"] as! [String],
+                                                state: .Sent
+                    )
+                    
+                    allEvents.append(paEvent)
                 }
-                
-                completion(success: true, events: allEvents)
             }
-            catch {
-                completion(success: false, events: [])
-            }
+            
+            completion(success: true, events: allEvents)
         }
-        
-        task.resume()
     }
     
 }

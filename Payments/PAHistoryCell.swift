@@ -36,14 +36,24 @@ class PAHistoryCell: UITableViewCell {
                     let image = UIImageView(image: image)
                     image.clipsToBounds = true
                     image.contentMode = .ScaleAspectFill
-                    image.layer.cornerRadius = kDefaultImageSize / 2
+                    image.cornerRadius = kDefaultImageSize / 2
+                    image.borderColor = UIColor.lightGrayColor()
+                    image.borderWidth = 0.5
+                    image.frame = CGRect(x: 0, y: 0, width: kDefaultImageSize, height: kDefaultImageSize)
                     
-                    image.mas_remakeConstraints({ (make) in
+                    let snapShotImageView = UIImageView(image: image.snapshot())
+                    snapShotImageView.shadowOpacity = 0.4
+                    snapShotImageView.shadowColor = .blackColor()
+                    snapShotImageView.shadowOffset = CGSize(width: 1, height: 1)
+                    snapShotImageView.shadowRadius = 1
+                    
+                    
+                    snapShotImageView.mas_remakeConstraints({ (make) in
                         make.height.mas_equalTo()(kDefaultImageSize)
                         make.width.mas_equalTo()(kDefaultImageSize)
                     })
                     
-                    self?.avatarStackView?.addArrangedSubview(image)
+                    self?.avatarStackView?.addArrangedSubview(snapShotImageView)
                     
                 })
             }

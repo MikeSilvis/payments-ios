@@ -9,9 +9,27 @@
 import UIKit
 
 class PAHttpRequest: NSObject {
+    static let defaultDomain = "http://fahim.mac:3031"
+    
     typealias PAJSONCompletion = (success : Bool, json : [String : AnyObject]) -> ()
     typealias PADataCompletion = (success : Bool, data : NSData?) -> ()
     typealias PAImageCompletion = (success : Bool, image : UIImage?) -> ()
+    
+    class func fetchJSON(url : String, completion : PAJSONCompletion) {
+        fetchData("\(defaultDomain)/\(url)") { (success, data) in
+            do {
+                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [String : AnyObject] {
+                    completion(success: true, json: json)
+                }
+                else {
+                    completion(success: false, json: [:])
+                }
+            }
+            catch {
+                completion(success: false, json: [:])
+            }
+        }
+    }
     
     class func fetchImage(url : String, completion: PAImageCompletion) {
         fetchData(url) { (success, data) in
