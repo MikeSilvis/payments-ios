@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  Payments
 //
 //  Created by Mike Silvis on 7/25/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class PAProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
