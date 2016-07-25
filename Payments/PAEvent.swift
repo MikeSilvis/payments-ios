@@ -34,7 +34,7 @@ struct PAEvent {
     var state       : PAEventState = .Sent
     
     func dollarAmount() -> String {
-        return "$\(amount_cents)"
+        return "$\(amount_cents.floatValue / 100)"
     }
     
     func asJSON() -> [String : AnyObject] {
