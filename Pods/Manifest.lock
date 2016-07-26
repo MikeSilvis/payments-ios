@@ -14,31 +14,42 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Bolts (1.8.3):
+    - Bolts/AppLinks (= 1.8.3)
+    - Bolts/Tasks (= 1.8.3)
+  - Bolts/AppLinks (1.8.3):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.3)
   - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
-  - Digits (2.3.0):
-    - TwitterCore (= 2.3.0)
   - Fabric (1.6.7)
-  - Masonry (1.0.1)
-  - TwitterCore (2.3.0):
-    - Fabric
+  - FBSDKCoreKit (4.13.1):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.13.1):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.13.1):
+    - FBSDKCoreKit
+  - SnapKit (0.21.1)
 
 DEPENDENCIES:
   - AFNetworking
   - Crashlytics
-  - Digits
   - Fabric
-  - Masonry
-  - TwitterCore
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - SnapKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bolts: 52551f96df2f8aac6b4414347f3f8353a39f1966
   Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
-  Digits: af82d24ec38035cc555b60f55cca5abc68a76bed
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
-  TwitterCore: 817eae3e291fa4125b47789e26a4f6f024115c1f
+  FBSDKCoreKit: 2807fe0da2ddb49a1469da6d6ff597f99912980f
+  FBSDKLoginKit: 6d350cb6a22d6956e9d078885de6ee8a0ebc51b4
+  FBSDKShareKit: c9438df7573b33780ac8c3451201c5ebb260ffca
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
 
-PODFILE CHECKSUM: b9870f10f5e299e49a08ea81d9d25cae4a1eb1dc
+PODFILE CHECKSUM: 78830ceb68a3d6c8b32db0e6ccfad0b5baf45c7b
 
 COCOAPODS: 1.0.1

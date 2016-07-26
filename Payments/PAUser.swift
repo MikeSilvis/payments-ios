@@ -9,11 +9,48 @@
 import UIKit
 
 class PAUser: NSObject {
-    
     static let currentUser = PAUser()
+    
+    
+    //
+    // MARK: Defaults
+    //
+    
+    private static let kUserDefaultAccessToken : String = "kUserDefaultAccessToken"
+    
+    //
+    // MARK : Alias
+    //
     
     typealias PAEventGetCompletion = (success : Bool, events : [PAEvent]) -> ()
     typealias PAEventCreateCompletion = (success : Bool) -> ()
+    typealias PACreateUserCompletion = (success : Bool) -> ()
+    
+    lazy var isLoggedIn : Bool = {
+        return self.accessToken != nil
+    }()
+
+    var accessToken : String? = NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultAccessToken) {
+        didSet {
+            NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultAccessToken)
+            
+            isLoggedIn = accessToken != nil
+        }
+    }
+    
+    //
+    // MARK : Requests
+    //
+    
+    func authenticateWithFacebook(facebookID : String, accessToken: String, completion : PACreateUserCompletion) {
+        PAHttpRequest.dispatchPostRequest("users", params: ["facebook_id" : facebookID, "facebook_access_token" : accessToken]) { [weak self] (success, json) in
+            if let userJSON = json["user"] as? [String : AnyObject], let token = userJSON["access_token"] as? String where success {
+                self?.accessToken = token
+            }
+            
+            completion(success: success)
+        }
+    }
     
     func findEvents(completion: PAEventGetCompletion) {
         PAHttpRequest.dispatchGetRequest("events/history", params: [:]) { (success, json) in

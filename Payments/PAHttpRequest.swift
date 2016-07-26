@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class PAHttpRequest: NSObject {
     static let defaultDomain = "http://fahim.mac:3031"

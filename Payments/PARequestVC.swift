@@ -13,6 +13,11 @@ class PARequestVC: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     @IBAction private func didTapRequest(sender: AnyObject) {
         guard let dollarAmount = dollarAmountLabel?.text, let text = descriptionTextView?.text else { return }
         
@@ -22,7 +27,6 @@ class PARequestVC: UIViewController {
             
         }
     }
-
-
+    
 }
 

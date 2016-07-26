@@ -1,11 +1,14 @@
 platform :ios, '9.0'
 inhibit_all_warnings!
 
+use_frameworks!
+
 target 'Payments' do
-  pod 'Masonry'
   pod 'AFNetworking'
-  pod 'Digits'
   pod 'Fabric'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
   pod 'Crashlytics'
-  pod 'TwitterCore'
+  pod 'SnapKit'
 end

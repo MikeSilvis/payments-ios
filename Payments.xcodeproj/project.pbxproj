@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29EE524965F6B5BB04DF67FC /* libPods-Payments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0BC647D20E35786BB12E73 /* libPods-Payments.a */; };
 		364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647779F1D467E8C000B5144 /* extension-UIView.swift */; };
 		364777A21D46898A000B5144 /* PAFeedCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A11D46898A000B5144 /* PAFeedCVC.swift */; };
 		364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A51D468BD3000B5144 /* PAEventRequestCell.swift */; };
@@ -19,13 +18,16 @@
 		369FB3921D465932002F8ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3901D465932002F8ADC /* Main.storyboard */; };
 		369FB3941D465932002F8ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3931D465932002F8ADC /* Assets.xcassets */; };
 		369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3951D465932002F8ADC /* LaunchScreen.storyboard */; };
-		369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */; };
 		369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */; };
 		369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */; };
 		369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A71D466DF5002F8ADC /* PAUser.swift */; };
 		369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A91D466E03002F8ADC /* PAEvent.swift */; };
 		369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3AB1D4676DD002F8ADC /* PAHttpRequest.swift */; };
 		369FB3AF1D467A20002F8ADC /* PADesignableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */; };
+		36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112ED1D4702A0005B4B57 /* PARootNC.swift */; };
+		36C112F01D47032C005B4B57 /* PALoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112EF1D47032C005B4B57 /* PALoginVC.swift */; };
+		36C112F31D470D85005B4B57 /* PAFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112F21D470D85005B4B57 /* PAFeedVC.swift */; };
+		69EC3E0F2DA6B33C508CDB39 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,6 @@
 		369FB3931D465932002F8ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		369FB3961D465932002F8ADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		369FB3981D465932002F8ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARootTabBarVC.swift; sourceTree = "<group>"; };
 		369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryTVC.swift; sourceTree = "<group>"; };
 		369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryCell.swift; sourceTree = "<group>"; };
 		369FB3A71D466DF5002F8ADC /* PAUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAUser.swift; sourceTree = "<group>"; };
@@ -50,8 +51,11 @@
 		369FB3AB1D4676DD002F8ADC /* PAHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHttpRequest.swift; sourceTree = "<group>"; };
 		369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PADesignableControl.swift; sourceTree = "<group>"; };
 		369FB3B41D467AA0002F8ADC /* Payments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Payments-Bridging-Header.h"; sourceTree = "<group>"; };
-		3A0BC647D20E35786BB12E73 /* libPods-Payments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Payments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C112ED1D4702A0005B4B57 /* PARootNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARootNC.swift; sourceTree = "<group>"; };
+		36C112EF1D47032C005B4B57 /* PALoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PALoginVC.swift; sourceTree = "<group>"; };
+		36C112F21D470D85005B4B57 /* PAFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedVC.swift; sourceTree = "<group>"; };
 		5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
+		7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Payments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B066F6A9C76B79843CB145 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EE524965F6B5BB04DF67FC /* libPods-Payments.a in Frameworks */,
+				69EC3E0F2DA6B33C508CDB39 /* Pods_Payments.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,15 +123,11 @@
 		369FB39E1D466403002F8ADC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				36C112F11D4703DD005B4B57 /* Controllers */,
 				3647779E1D467E75000B5144 /* Extensions */,
 				369FB3AD1D467A16002F8ADC /* Helpers */,
 				369FB3A61D466DE1002F8ADC /* Models */,
 				369FB3A31D466740002F8ADC /* Cells */,
-				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
-				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
-				369FB39F1D466444002F8ADC /* PARootTabBarVC.swift */,
-				369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */,
-				364777A11D46898A000B5144 /* PAFeedCVC.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -160,10 +160,24 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		36C112F11D4703DD005B4B57 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
+				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
+				369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */,
+				364777A11D46898A000B5144 /* PAFeedCVC.swift */,
+				36C112ED1D4702A0005B4B57 /* PARootNC.swift */,
+				36C112EF1D47032C005B4B57 /* PALoginVC.swift */,
+				36C112F21D470D85005B4B57 /* PAFeedVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		60AF6A9C087B70E5953A5454 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A0BC647D20E35786BB12E73 /* libPods-Payments.a */,
+				7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,13 +330,15 @@
 			files = (
 				369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */,
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
+				36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */,
 				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
-				369FB3A01D466444002F8ADC /* PARootTabBarVC.swift in Sources */,
 				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
 				369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */,
+				36C112F31D470D85005B4B57 /* PAFeedVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
 				364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */,
+				36C112F01D47032C005B4B57 /* PALoginVC.swift in Sources */,
 				369FB38D1D465932002F8ADC /* PARequestVC.swift in Sources */,
 				369FB3AF1D467A20002F8ADC /* PADesignableControl.swift in Sources */,
 				369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */,
