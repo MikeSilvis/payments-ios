@@ -28,5 +28,9 @@ class PARequestVC: UIViewController {
         }
     }
     
+    @IBAction private func didTapDone(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
 

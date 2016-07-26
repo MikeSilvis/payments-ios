@@ -13,19 +13,7 @@ class PARootNC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        handleLoggedOutUser()
-    }
-    
-    //
-    // MARK: Helpers
-    //
-    
-    private func handleLoggedOutUser() {
-        guard !PAUser.currentUser.isLoggedIn else {
-            return
-        }
-        
-        viewControllers = [PARootNC.loginVC()]
+        viewControllers = PAUser.currentUser.isLoggedIn ? [PARootNC.feedVC()] : [PARootNC.loginVC()]
     }
     
     //
@@ -33,10 +21,10 @@ class PARootNC: UINavigationController {
     //
     
     class func loginVC() -> PALoginVC {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginVCStoryboard") as! PALoginVC
+        return UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController() as! PALoginVC
     }
     
     class func feedVC() -> PAFeedVC {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("feedVCStoryboard") as! PAFeedVC
+        return UIStoryboard(name: "Feed", bundle: nil).instantiateInitialViewController() as! PAFeedVC
     }
 }

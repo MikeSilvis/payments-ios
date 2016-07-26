@@ -27,6 +27,10 @@
 		36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112ED1D4702A0005B4B57 /* PARootNC.swift */; };
 		36C112F01D47032C005B4B57 /* PALoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112EF1D47032C005B4B57 /* PALoginVC.swift */; };
 		36C112F31D470D85005B4B57 /* PAFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112F21D470D85005B4B57 /* PAFeedVC.swift */; };
+		36C112F61D4711B0005B4B57 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F51D4711B0005B4B57 /* Feed.storyboard */; };
+		36C112F81D4711B8005B4B57 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F71D4711B8005B4B57 /* Requests.storyboard */; };
+		36C112FA1D4711C0005B4B57 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F91D4711C0005B4B57 /* Profile.storyboard */; };
+		36C112FC1D47122A005B4B57 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112FB1D47122A005B4B57 /* Authentication.storyboard */; };
 		69EC3E0F2DA6B33C508CDB39 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		36C112ED1D4702A0005B4B57 /* PARootNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARootNC.swift; sourceTree = "<group>"; };
 		36C112EF1D47032C005B4B57 /* PALoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PALoginVC.swift; sourceTree = "<group>"; };
 		36C112F21D470D85005B4B57 /* PAFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedVC.swift; sourceTree = "<group>"; };
+		36C112F51D4711B0005B4B57 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		36C112F71D4711B8005B4B57 /* Requests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
+		36C112F91D4711C0005B4B57 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		36C112FB1D47122A005B4B57 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Payments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B066F6A9C76B79843CB145 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 		369FB3891D465932002F8ADC /* Payments */ = {
 			isa = PBXGroup;
 			children = (
+				36C112F41D4711A7005B4B57 /* Storyboards */,
 				369FB39E1D466403002F8ADC /* Classes */,
 				369FB38A1D465932002F8ADC /* AppDelegate.swift */,
 				369FB3901D465932002F8ADC /* Main.storyboard */,
@@ -172,6 +181,17 @@
 				36C112F21D470D85005B4B57 /* PAFeedVC.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		36C112F41D4711A7005B4B57 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				36C112F51D4711B0005B4B57 /* Feed.storyboard */,
+				36C112F71D4711B8005B4B57 /* Requests.storyboard */,
+				36C112F91D4711C0005B4B57 /* Profile.storyboard */,
+				36C112FB1D47122A005B4B57 /* Authentication.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		60AF6A9C087B70E5953A5454 /* Frameworks */ = {
@@ -253,9 +273,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C112FC1D47122A005B4B57 /* Authentication.storyboard in Resources */,
+				36C112F61D4711B0005B4B57 /* Feed.storyboard in Resources */,
 				364777AB1D469178000B5144 /* PAAvatarView.xib in Resources */,
 				369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */,
 				369FB3941D465932002F8ADC /* Assets.xcassets in Resources */,
+				36C112F81D4711B8005B4B57 /* Requests.storyboard in Resources */,
+				36C112FA1D4711C0005B4B57 /* Profile.storyboard in Resources */,
 				369FB3921D465932002F8ADC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
