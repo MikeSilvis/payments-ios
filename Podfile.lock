@@ -14,16 +14,31 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Crashlytics (3.7.2):
+    - Fabric (~> 1.6.3)
+  - Digits (2.3.0):
+    - TwitterCore (= 2.3.0)
+  - Fabric (1.6.7)
   - Masonry (1.0.1)
+  - TwitterCore (2.3.0):
+    - Fabric
 
 DEPENDENCIES:
   - AFNetworking
+  - Crashlytics
+  - Digits
+  - Fabric
   - Masonry
+  - TwitterCore
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
+  Digits: af82d24ec38035cc555b60f55cca5abc68a76bed
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  TwitterCore: 817eae3e291fa4125b47789e26a4f6f024115c1f
 
-PODFILE CHECKSUM: f2550e31bec9e8ab28c68a69efa7b19d9723bf9e
+PODFILE CHECKSUM: b9870f10f5e299e49a08ea81d9d25cae4a1eb1dc
 
 COCOAPODS: 1.0.1
