@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647779F1D467E8C000B5144 /* extension-UIView.swift */; };
-		364777A21D46898A000B5144 /* PAFeedCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A11D46898A000B5144 /* PAFeedCVC.swift */; };
+		364777A21D46898A000B5144 /* PAFeedNearbyCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A11D46898A000B5144 /* PAFeedNearbyCVC.swift */; };
 		364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A51D468BD3000B5144 /* PAEventRequestCell.swift */; };
 		364777A91D469163000B5144 /* PAAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A81D469163000B5144 /* PAAvatarView.swift */; };
 		364777AB1D469178000B5144 /* PAAvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364777AA1D469178000B5144 /* PAAvatarView.xib */; };
@@ -18,7 +18,7 @@
 		369FB3921D465932002F8ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3901D465932002F8ADC /* Main.storyboard */; };
 		369FB3941D465932002F8ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3931D465932002F8ADC /* Assets.xcassets */; };
 		369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369FB3951D465932002F8ADC /* LaunchScreen.storyboard */; };
-		369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */; };
+		369FB3A21D466630002F8ADC /* PAFeedHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A11D466630002F8ADC /* PAFeedHistoryTVC.swift */; };
 		369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */; };
 		369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A71D466DF5002F8ADC /* PAUser.swift */; };
 		369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3A91D466E03002F8ADC /* PAEvent.swift */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		3647779F1D467E8C000B5144 /* extension-UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension-UIView.swift"; sourceTree = "<group>"; };
-		364777A11D46898A000B5144 /* PAFeedCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedCVC.swift; sourceTree = "<group>"; };
+		364777A11D46898A000B5144 /* PAFeedNearbyCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedNearbyCVC.swift; sourceTree = "<group>"; };
 		364777A51D468BD3000B5144 /* PAEventRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAEventRequestCell.swift; sourceTree = "<group>"; };
 		364777A81D469163000B5144 /* PAAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAAvatarView.swift; sourceTree = "<group>"; };
 		364777AA1D469178000B5144 /* PAAvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAAvatarView.xib; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		369FB3931D465932002F8ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		369FB3961D465932002F8ADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		369FB3981D465932002F8ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryTVC.swift; sourceTree = "<group>"; };
+		369FB3A11D466630002F8ADC /* PAFeedHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedHistoryTVC.swift; sourceTree = "<group>"; };
 		369FB3A41D46675D002F8ADC /* PAHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAHistoryCell.swift; sourceTree = "<group>"; };
 		369FB3A71D466DF5002F8ADC /* PAUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAUser.swift; sourceTree = "<group>"; };
 		369FB3A91D466E03002F8ADC /* PAEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAEvent.swift; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 			children = (
 				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
 				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
-				369FB3A11D466630002F8ADC /* PAHistoryTVC.swift */,
-				364777A11D46898A000B5144 /* PAFeedCVC.swift */,
+				369FB3A11D466630002F8ADC /* PAFeedHistoryTVC.swift */,
+				364777A11D46898A000B5144 /* PAFeedNearbyCVC.swift */,
 				36C112ED1D4702A0005B4B57 /* PARootNC.swift */,
 				36C112EF1D47032C005B4B57 /* PALoginVC.swift */,
 				36C112F21D470D85005B4B57 /* PAFeedVC.swift */,
@@ -358,7 +358,7 @@
 				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
-				369FB3A21D466630002F8ADC /* PAHistoryTVC.swift in Sources */,
+				369FB3A21D466630002F8ADC /* PAFeedHistoryTVC.swift in Sources */,
 				36C112F31D470D85005B4B57 /* PAFeedVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
 				364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */,
@@ -367,7 +367,7 @@
 				369FB3AF1D467A20002F8ADC /* PADesignableControl.swift in Sources */,
 				369FB3A81D466DF5002F8ADC /* PAUser.swift in Sources */,
 				364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */,
-				364777A21D46898A000B5144 /* PAFeedCVC.swift in Sources */,
+				364777A21D46898A000B5144 /* PAFeedNearbyCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

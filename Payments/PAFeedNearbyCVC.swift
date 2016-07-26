@@ -8,19 +8,12 @@
 
 import UIKit
 
-class PAFeedCVC: UICollectionViewController {
+class PAFeedNearbyCVC: UICollectionViewController {
     private static let reuseIdentifier = "pendingRequestsCell"
-    private var events : [PAEvent] = [] {
+    
+    var events : [PAEvent] = [] {
         didSet {
             collectionView?.reloadData()
-        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        PAUser.currentUser.findEvents { [weak self] (success, events) in
-            self?.events = events
         }
     }
 
@@ -35,7 +28,7 @@ class PAFeedCVC: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PAFeedCVC.reuseIdentifier, forIndexPath: indexPath) as! PAEventRequestCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PAFeedNearbyCVC.reuseIdentifier, forIndexPath: indexPath) as! PAEventRequestCell
         cell.event = events[indexPath.row]
     
         return cell

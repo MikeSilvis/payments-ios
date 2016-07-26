@@ -22,7 +22,7 @@ class PAUser: NSObject {
     // MARK : Alias
     //
     
-    typealias PAEventGetCompletion = (success : Bool, events : [PAEvent]) -> ()
+    typealias PAEventGetCompletion = (success : Bool, pendingEvents : [PAEvent], pastEvents: [PAEvent]) -> ()
     typealias PAEventCreateCompletion = (success : Bool) -> ()
     typealias PACreateUserCompletion = (success : Bool) -> ()
     
@@ -54,7 +54,8 @@ class PAUser: NSObject {
     
     func findEvents(completion: PAEventGetCompletion) {
         PAHttpRequest.dispatchGetRequest("events/history", params: [:]) { (success, json) in
-            var allEvents : [PAEvent] = []
+            var pastEvents : [PAEvent] = []
+            var pendingEvents : [PAEvent] = []
                 
             if let events = json["events"] as? [[String : AnyObject]] {
                 for event in events {
@@ -64,11 +65,12 @@ class PAUser: NSObject {
                                                 state: .Sent
                     )
                     
-                    allEvents.append(paEvent)
+                    pastEvents.append(paEvent)
+                    pendingEvents.append(paEvent)
                 }
             }
             
-            completion(success: success, events: allEvents)
+            completion(success: success, pendingEvents: pendingEvents, pastEvents: pastEvents)
         }
     }
     

@@ -3,20 +3,44 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--History-->
         <scene sceneID="Gvm-dD-Dyb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IaM-H8-uM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="I7N-q1-j4V" customClass="PAHistoryTVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="I7N-q1-j4V" customClass="PAFeedHistoryTVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" id="TIx-pR-m3H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="544"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="InC-r7-EsG">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-Xg-fon">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                                    <connections>
+                                        <segue destination="7dW-TS-Jgr" kind="embed" id="TLX-7Z-bHE"/>
+                                    </connections>
+                                </containerView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="g5Q-Xg-fon" firstAttribute="leading" secondItem="InC-r7-EsG" secondAttribute="leading" id="1XG-Ne-EYj"/>
+                                <constraint firstAttribute="bottom" secondItem="g5Q-Xg-fon" secondAttribute="bottom" id="EkX-mx-beA"/>
+                                <constraint firstAttribute="trailing" secondItem="g5Q-Xg-fon" secondAttribute="trailing" id="fTm-uR-hhs"/>
+                                <constraint firstItem="g5Q-Xg-fon" firstAttribute="top" secondItem="InC-r7-EsG" secondAttribute="top" id="lKC-ed-FsT"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="hqd-vr-WAo">
+                            <rect key="frame" x="0.0" y="254" width="600" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="historyCell" id="QAZ-zR-fMq" customClass="PAHistoryCell" customModule="Payments" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="58"/>
+                                <rect key="frame" x="0.0" y="196" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QAZ-zR-fMq" id="SSb-Nq-IHB">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
@@ -71,10 +95,10 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="ucO-B5-fKw"/>
                                             <exclude reference="jtl-iG-68A"/>
-                                            <exclude reference="nPP-lO-1ww"/>
+                                            <exclude reference="ucO-B5-fKw"/>
                                             <exclude reference="DoE-VR-mmQ"/>
+                                            <exclude reference="nPP-lO-1ww"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -92,8 +116,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="History" id="69d-4j-Pbx"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IaM-H8-uM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3273" y="1600"/>
+            <point key="canvasLocation" x="3273" y="1628"/>
         </scene>
         <!--profileVCStoryboard-->
         <scene sceneID="xAj-7b-10w">
@@ -106,7 +131,6 @@
         <!--Payments-->
         <scene sceneID="CgN-3B-irt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wb5-4Q-6in" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="feedVCStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X2o-0a-se0" customClass="PAFeedVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ioh-kC-Cl2"/>
@@ -117,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVb-lh-chh">
-                                <rect key="frame" x="0.0" y="64" width="600" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="544"/>
                                 <connections>
                                     <segue destination="I7N-q1-j4V" kind="embed" id="gyu-Ob-FXt"/>
                                 </connections>
@@ -146,7 +170,13 @@
                             <constraint firstItem="aVb-lh-chh" firstAttribute="top" secondItem="ioh-kC-Cl2" secondAttribute="bottom" id="Uu5-ov-rTc"/>
                             <constraint firstItem="AUk-Lj-Mt9" firstAttribute="top" secondItem="6jv-LG-q6p" secondAttribute="bottom" id="cqV-mK-LCI"/>
                             <constraint firstAttribute="trailing" secondItem="6jv-LG-q6p" secondAttribute="trailing" id="nzv-cu-fnc"/>
+                            <constraint firstItem="aVb-lh-chh" firstAttribute="top" secondItem="hFU-Ar-WXX" secondAttribute="topMargin" id="xW7-Wz-0nb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uu5-ov-rTc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Payments" id="e4N-Br-0dy">
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="t3o-xC-bV2">
@@ -156,6 +186,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wb5-4Q-6in" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2334" y="1600"/>
         </scene>
@@ -167,15 +198,14 @@
             </objects>
             <point key="canvasLocation" x="2334.5" y="2028"/>
         </scene>
-        <!--FeedCVC-->
+        <!--Feed NearbyCVC-->
         <scene sceneID="hHr-YZ-oFH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UBF-96-P5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <collectionViewController id="7dW-TS-Jgr" customClass="PAFeedCVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="7dW-TS-Jgr" customClass="PAFeedNearbyCVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="yBq-fc-ioo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="ax9-bl-RLo">
                             <size key="itemSize" width="100" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -184,7 +214,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pendingRequestsCell" id="Psu-V5-P0P" customClass="PAEventRequestCell" customModule="Payments" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="100" height="150"/>
+                                <rect key="frame" x="8" y="9" width="100" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
@@ -227,8 +257,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBF-96-P5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3273" y="2330"/>
+            <point key="canvasLocation" x="3968" y="1628"/>
         </scene>
     </scenes>
 </document>
