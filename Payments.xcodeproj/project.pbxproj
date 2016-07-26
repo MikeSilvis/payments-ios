@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36423E271D471B420024C61B /* PACameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36423E261D471B420024C61B /* PACameraManager.swift */; };
+		36423E291D471B8E0024C61B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36423E281D471B8E0024C61B /* AVFoundation.framework */; };
+		36423E2B1D471B930024C61B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36423E2A1D471B930024C61B /* Contacts.framework */; };
 		364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647779F1D467E8C000B5144 /* extension-UIView.swift */; };
 		364777A21D46898A000B5144 /* PAFeedNearbyCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A11D46898A000B5144 /* PAFeedNearbyCVC.swift */; };
 		364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364777A51D468BD3000B5144 /* PAEventRequestCell.swift */; };
@@ -28,13 +31,16 @@
 		36C112F01D47032C005B4B57 /* PALoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112EF1D47032C005B4B57 /* PALoginVC.swift */; };
 		36C112F31D470D85005B4B57 /* PAFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C112F21D470D85005B4B57 /* PAFeedVC.swift */; };
 		36C112F61D4711B0005B4B57 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F51D4711B0005B4B57 /* Feed.storyboard */; };
-		36C112F81D4711B8005B4B57 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F71D4711B8005B4B57 /* Requests.storyboard */; };
+		36C112F81D4711B8005B4B57 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F71D4711B8005B4B57 /* Request.storyboard */; };
 		36C112FA1D4711C0005B4B57 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F91D4711C0005B4B57 /* Profile.storyboard */; };
 		36C112FC1D47122A005B4B57 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112FB1D47122A005B4B57 /* Authentication.storyboard */; };
 		69EC3E0F2DA6B33C508CDB39 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36423E261D471B420024C61B /* PACameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACameraManager.swift; sourceTree = "<group>"; };
+		36423E281D471B8E0024C61B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		36423E2A1D471B930024C61B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		3647779F1D467E8C000B5144 /* extension-UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension-UIView.swift"; sourceTree = "<group>"; };
 		364777A11D46898A000B5144 /* PAFeedNearbyCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedNearbyCVC.swift; sourceTree = "<group>"; };
 		364777A51D468BD3000B5144 /* PAEventRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAEventRequestCell.swift; sourceTree = "<group>"; };
@@ -59,7 +65,7 @@
 		36C112EF1D47032C005B4B57 /* PALoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PALoginVC.swift; sourceTree = "<group>"; };
 		36C112F21D470D85005B4B57 /* PAFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFeedVC.swift; sourceTree = "<group>"; };
 		36C112F51D4711B0005B4B57 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
-		36C112F71D4711B8005B4B57 /* Requests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
+		36C112F71D4711B8005B4B57 /* Request.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
 		36C112F91D4711C0005B4B57 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		36C112FB1D47122A005B4B57 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36423E2B1D471B930024C61B /* Contacts.framework in Frameworks */,
+				36423E291D471B8E0024C61B /* AVFoundation.framework in Frameworks */,
 				69EC3E0F2DA6B33C508CDB39 /* Pods_Payments.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +173,7 @@
 			children = (
 				364777A71D469152000B5144 /* Avatar */,
 				369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */,
+				36423E261D471B420024C61B /* PACameraManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -187,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				36C112F51D4711B0005B4B57 /* Feed.storyboard */,
-				36C112F71D4711B8005B4B57 /* Requests.storyboard */,
+				36C112F71D4711B8005B4B57 /* Request.storyboard */,
 				36C112F91D4711C0005B4B57 /* Profile.storyboard */,
 				36C112FB1D47122A005B4B57 /* Authentication.storyboard */,
 			);
@@ -197,6 +206,8 @@
 		60AF6A9C087B70E5953A5454 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36423E2A1D471B930024C61B /* Contacts.framework */,
+				36423E281D471B8E0024C61B /* AVFoundation.framework */,
 				7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */,
 			);
 			name = Frameworks;
@@ -278,7 +289,7 @@
 				364777AB1D469178000B5144 /* PAAvatarView.xib in Resources */,
 				369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */,
 				369FB3941D465932002F8ADC /* Assets.xcassets in Resources */,
-				36C112F81D4711B8005B4B57 /* Requests.storyboard in Resources */,
+				36C112F81D4711B8005B4B57 /* Request.storyboard in Resources */,
 				36C112FA1D4711C0005B4B57 /* Profile.storyboard in Resources */,
 				369FB3921D465932002F8ADC /* Main.storyboard in Resources */,
 			);
@@ -356,6 +367,7 @@
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
 				36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */,
 				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
+				36423E271D471B420024C61B /* PACameraManager.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
 				369FB3A21D466630002F8ADC /* PAFeedHistoryTVC.swift in Sources */,
