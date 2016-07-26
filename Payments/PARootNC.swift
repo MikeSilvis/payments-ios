@@ -32,11 +32,11 @@ class PARootNC: UINavigationController {
     // MARK: Class Macros
     //
     
-    private class func loginVC() -> PALoginVC {
+    class func loginVC() -> PALoginVC {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginVCStoryboard") as! PALoginVC
     }
     
-    private class func feedVC() -> PAFeedVC {
+    class func feedVC() -> PAFeedVC {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("feedVCStoryboard") as! PAFeedVC
     }
 }

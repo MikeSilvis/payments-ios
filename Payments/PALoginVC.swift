@@ -49,7 +49,7 @@ extension PALoginVC : FBSDKLoginButtonDelegate {
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         PAUser.currentUser.authenticateWithFacebook(result.token.userID, accessToken: result.token.tokenString) { [weak self] (success) in
             if success {
-                
+                self?.navigationController?.pushViewController(PARootNC.feedVC(), animated: true)
             }
             else {
                 self?.showFacebookAuthenticationError()
