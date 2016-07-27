@@ -119,7 +119,7 @@ class PACameraManager: NSObject {
     // MARK: Configuration
 
     func addVideoInput() {
-        let device: AVCaptureDevice = deviceWithMediaTypeWithPosition(AVMediaTypeVideo, position: AVCaptureDevicePosition.Back)
+        let device : AVCaptureDevice = deviceWithMediaTypeWithPosition(AVMediaTypeVideo, position: AVCaptureDevicePosition.Back)
         do {
             let input = try AVCaptureDeviceInput(device: device)
             try device.lockForConfiguration()
@@ -131,7 +131,8 @@ class PACameraManager: NSObject {
             if session.canAddInput(input) {
                 session.addInput(input)
             }
-        } catch {
+        }
+        catch {
             print(error)
         }
     }

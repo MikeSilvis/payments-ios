@@ -23,7 +23,7 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
         paymentContext?.delegate = self
         paymentContext?.hostViewController = self
         let userInfo = STPUserInformation()
-        //userInfo.email = PAUser.currentUser.email
+        userInfo.email = PAUser.currentUser.email
         paymentContext?.prefilledInformation = userInfo
         navigationItem.hidesBackButton = true
     }

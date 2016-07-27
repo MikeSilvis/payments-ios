@@ -33,5 +33,11 @@ class PAFeedNearbyCVC: UICollectionViewController {
     
         return cell
     }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let event = events[indexPath.row]
+        
+        presentViewController(PAPaymentNC.instance(event), animated: true, completion: nil)
+    }
 
 }

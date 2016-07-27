@@ -45,14 +45,30 @@ class PAUser: NSObject {
         }
     }
     
+    var email : String?
+    
     //
     // MARK : Requests
     //
     
     func authenticateWithFacebook(facebookID : String, accessToken: String, completion : PACreateUserCompletion) {
         PAHttpRequest.dispatchPostRequest("users", params: ["facebook_id" : facebookID, "facebook_access_token" : accessToken]) { [weak self] (success, json) in
-            if let userJSON = json["user"] as? [String : AnyObject], let token = userJSON["access_token"] as? String where success {
+            guard let userJSON = json["user"] as? [String : AnyObject] else {
+                completion(success: false)
+                return
+            }
+            
+            guard success else {
+                completion(success: false)
+                return
+            }
+            
+            if let token = userJSON["access_token"] as? String {
                 self?.accessToken = token
+            }
+            
+            if let email = userJSON["email"] as? String {
+                self?.email = email
             }
             
             completion(success: success)

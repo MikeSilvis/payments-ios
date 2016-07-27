@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KLs-Tl-r50">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--PaymentNC-->
+        <scene sceneID="nX5-h6-iK6">
+            <objects>
+                <navigationController id="KLs-Tl-r50" customClass="PAPaymentNC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sGN-7c-Z7M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uY2-8z-qXp" kind="relationship" relationship="rootViewController" id="mwC-FB-RmZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DnS-g1-31N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-248" y="364"/>
+        </scene>
+        <!--Payment-->
+        <scene sceneID="hxg-CC-Ptq">
+            <objects>
+                <viewController id="uY2-8z-qXp" customClass="PAPaymentVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dF3-XZ-gPq"/>
+                        <viewControllerLayoutGuide type="bottom" id="3kK-j0-3aM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fFE-gj-bY1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhA-s6-Foj">
+                                <rect key="frame" x="16" y="80" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-BA-xrG">
+                                <rect key="frame" x="16" y="117" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-fu-4iR">
+                                <rect key="frame" x="16" y="154" width="568" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="a1G-qi-gdO"/>
+                                </constraints>
+                                <state key="normal" title="Pay"/>
+                                <connections>
+                                    <action selector="didTapPay:" destination="uY2-8z-qXp" eventType="touchUpInside" id="JFc-G1-CuP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FNc-BA-xrG" firstAttribute="leading" secondItem="fFE-gj-bY1" secondAttribute="leading" constant="16" id="1Wg-Re-y4y"/>
+                            <constraint firstAttribute="trailing" secondItem="zDP-fu-4iR" secondAttribute="trailing" constant="16" id="Cch-A5-xMu"/>
+                            <constraint firstItem="zDP-fu-4iR" firstAttribute="top" secondItem="FNc-BA-xrG" secondAttribute="bottom" constant="16" id="NDB-1l-B2g"/>
+                            <constraint firstItem="zDP-fu-4iR" firstAttribute="leading" secondItem="fFE-gj-bY1" secondAttribute="leading" constant="16" id="Nei-bQ-d3z"/>
+                            <constraint firstItem="KhA-s6-Foj" firstAttribute="leading" secondItem="fFE-gj-bY1" secondAttribute="leading" constant="16" id="O7s-uW-W14"/>
+                            <constraint firstAttribute="trailing" secondItem="FNc-BA-xrG" secondAttribute="trailing" constant="16" id="WFv-mV-vHu"/>
+                            <constraint firstItem="FNc-BA-xrG" firstAttribute="top" secondItem="KhA-s6-Foj" secondAttribute="bottom" constant="16" id="cTF-Wn-Kal"/>
+                            <constraint firstItem="KhA-s6-Foj" firstAttribute="top" secondItem="dF3-XZ-gPq" secondAttribute="bottom" constant="16" id="cWU-xv-QVF"/>
+                            <constraint firstAttribute="trailing" secondItem="KhA-s6-Foj" secondAttribute="trailing" constant="16" id="r7v-ud-ojj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Payment" id="Np8-bZ-xNd">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="SRx-uy-ydu">
+                            <connections>
+                                <action selector="didTapCancel:" destination="uY2-8z-qXp" id="TC8-0e-9g1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountLabel" destination="FNc-BA-xrG" id="BLa-1E-AKs"/>
+                        <outlet property="descriptionLabel" destination="KhA-s6-Foj" id="6He-lc-aq5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrH-Cj-xFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="364"/>
+        </scene>
+    </scenes>
+</document>
