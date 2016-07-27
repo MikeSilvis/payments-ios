@@ -84,6 +84,7 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
 
 extension PAFeedVC : PAFeedVCDelegate {
     func requestPayment(event: PAEvent) {
+        presentViewController(PAPaymentNC.instance(event), animated: true, completion: nil)
     }
 }
 
