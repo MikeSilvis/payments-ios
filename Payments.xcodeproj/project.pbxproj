@@ -196,18 +196,18 @@
 		36C112F11D4703DD005B4B57 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
-				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
+				DD01736F1D471ACA0087929D /* PACreditCardsVC.swift */,
 				369FB3A11D466630002F8ADC /* PAFeedHistoryTVC.swift */,
 				364777A11D46898A000B5144 /* PAFeedNearbyCVC.swift */,
-				36C112ED1D4702A0005B4B57 /* PARootNC.swift */,
-				36C112EF1D47032C005B4B57 /* PALoginVC.swift */,
 				36C112F21D470D85005B4B57 /* PAFeedVC.swift */,
-				DD01736F1D471ACA0087929D /* PACreditCardsVC.swift */,
-				360CF6DF1D485A3300B582A2 /* PAPaymentVC.swift */,
+				36C112EF1D47032C005B4B57 /* PALoginVC.swift */,
 				360CF6E11D485A8F00B582A2 /* PAPaymentNC.swift */,
-				360CF6E31D485EDB00B582A2 /* PARequestNC.swift */,
+				360CF6DF1D485A3300B582A2 /* PAPaymentVC.swift */,
+				369FB38E1D465932002F8ADC /* PAProfileVC.swift */,
 				360CF6E51D48601900B582A2 /* PARequestConfirmVC.swift */,
+				360CF6E31D485EDB00B582A2 /* PARequestNC.swift */,
+				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
+				36C112ED1D4702A0005B4B57 /* PARootNC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

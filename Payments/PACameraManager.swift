@@ -38,7 +38,7 @@ class PACameraManager: NSObject {
 
     // MARK: Session
 
-    func initializeSession() {
+    private func initializeSession() {
         session = AVCaptureSession()
         session.sessionPreset = AVCaptureSessionPresetHigh
         sessionQueue = dispatch_queue_create("camera session", DISPATCH_QUEUE_SERIAL)
@@ -118,7 +118,7 @@ class PACameraManager: NSObject {
 
     // MARK: Configuration
 
-    func addVideoInput() {
+    private func addVideoInput() {
         let device : AVCaptureDevice = deviceWithMediaTypeWithPosition(AVMediaTypeVideo, position: AVCaptureDevicePosition.Back)
         do {
             let input = try AVCaptureDeviceInput(device: device)
@@ -137,7 +137,7 @@ class PACameraManager: NSObject {
         }
     }
 
-    func addStillImageOutput() {
+    private func addStillImageOutput() {
         stillImageOutput = AVCaptureStillImageOutput()
         stillImageOutput?.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
 
@@ -146,7 +146,7 @@ class PACameraManager: NSObject {
         }
     }
 
-    func deviceWithMediaTypeWithPosition(mediaType: NSString, position: AVCaptureDevicePosition) -> AVCaptureDevice {
+    private func deviceWithMediaTypeWithPosition(mediaType: NSString, position: AVCaptureDevicePosition) -> AVCaptureDevice {
         let devices: NSArray = AVCaptureDevice.devicesWithMediaType(mediaType as String)
         var captureDevice: AVCaptureDevice = devices.firstObject as! AVCaptureDevice
         for device in devices {
@@ -161,12 +161,12 @@ class PACameraManager: NSObject {
 
     // MARK: Observers
 
-    func setObservers() {
+    private func setObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PACameraManager.sessionDidStart(_:)), name: AVCaptureSessionDidStartRunningNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PACameraManager.sessionDidStop(_:)), name: AVCaptureSessionDidStopRunningNotification, object: nil)
     }
 
-    func removeObservers() {
+    private func removeObservers() {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
