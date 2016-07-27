@@ -85,7 +85,7 @@ struct PAEvent {
     //
     
     func makePayment(completion: PAEventPaymentCompletion) {
-        PAHttpRequest.dispatchPostRequest("events/\(objectID)/make_payment", params: [:]) { (success, json) in
+        PAHttpRequest.dispatchPostRequest("events/\(objectID!)/make_payment", params: [:]) { (success, json) in
             completion(success: success)
         }
     }

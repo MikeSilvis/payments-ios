@@ -54,10 +54,9 @@ class PAPaymentVC: UIViewController {
                    message: "You successfully paid \(dollarAmount)!",
             preferredStyle: .Alert)
 
-        let okAction = UIAlertAction(
-              title: "OK",
-              style: .Default,
-            handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .Default) { [weak self] (action) in
+            self?.dismissViewControllerAnimated(true, completion: nil)
+        }
 
         alertController.addAction(okAction)
 
