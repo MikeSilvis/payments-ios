@@ -147,8 +147,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="blurView" destination="g4y-AN-d9A" id="PHw-CR-F2f"/>
                         <outlet property="cameraButton" destination="sF9-HY-utJ" id="Crh-eb-czR"/>
                         <outlet property="cameraView" destination="9lP-KO-VHq" id="Hsh-Iu-VD9"/>
+                        <outlet property="flashButton" destination="Ivk-ky-82s" id="sgV-Vg-f8p"/>
                         <segue destination="5cl-Cg-4Qg" kind="show" identifier="confirmSegue" id="EtF-gV-nWP"/>
                     </connections>
                 </viewController>

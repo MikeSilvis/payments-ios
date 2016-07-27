@@ -7,27 +7,27 @@
 //
 
 import UIKit
-import AVFoundation
 import CameraManager
 
-private enum PARequestVCMode : Int {
-    case Snap
-    case Request
-
-    func cameraEnabled() -> Bool{
-        switch self {
-        case .Snap:
-            return true
-        case .Request:
-            return false
+class PARequestVC: UIViewController {
+    @IBOutlet private weak var flashButton: UIButton? {
+        didSet {
+            flashButton?.setTitle("Flash: \(cameraManager.flashMode.str())", forState: .Normal)
         }
     }
-}
-
-class PARequestVC: UIViewController {
     @IBOutlet private weak var cameraView: UIView?
     @IBOutlet private weak var cameraButton: UIButton?
-
+    @IBOutlet private weak var blurView: UIVisualEffectView? {
+        didSet {
+            blurView?.layer.masksToBounds = false
+            blurView?.layer.shadowRadius = 5
+            blurView?.layer.shadowOffset = CGSizeZero
+            blurView?.layer.shadowPath = UIBezierPath(rect: blurView!.bounds).CGPath
+            blurView?.clipsToBounds = false
+            blurView?.layer.shadowOpacity = 0.7
+        }
+    }
+    
     private let cameraManager : CameraManager = {
         let manager = CameraManager()
         manager.cameraDevice = .Back
@@ -38,41 +38,11 @@ class PARequestVC: UIViewController {
         
         return manager
     }()
-    
-    private var preview : AVCaptureVideoPreviewLayer?
-    
-    private var mode : PARequestVCMode = .Snap {
-        didSet {
-            cameraButton?.enabled = mode.cameraEnabled()
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initializeCamera()
-    }
-
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-
-//        camera?.stopCamera()
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-//        camera?.startCamera()
-    }
-
-    private func initializeCamera() {
         cameraManager.addPreviewLayerToView(cameraView!)
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        preview?.frame = view.bounds
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -94,11 +64,11 @@ class PARequestVC: UIViewController {
     
     @IBAction private func didTapFlash(sender: AnyObject) {
         cameraManager.changeFlashMode()
+        
+        flashButton?.setTitle("Flash: \(cameraManager.flashMode.str())", forState: .Normal)
     }
 
     @IBAction private func didTapSnap(sender: AnyObject) {
-        mode = .Request
-
         cameraManager.capturePictureWithCompletion({ [weak self] (image, error) -> Void in
             self?.performSegueWithIdentifier("confirmSegue", sender: image)
         })
@@ -117,17 +87,16 @@ class PARequestVC: UIViewController {
     }
 }
 
-//extension PARequestVC : PACameraManagerDelegate {
-//    func cameraSessionConfigurationDidComplete() {
-////        camera?.startCamera()
-//    }
-//
-//    func cameraSessionDidBegin() {
-//
-//    }
-//
-//    func cameraSessionDidStop() {
-//
-//    }
-//}
-//
+extension CameraFlashMode {
+    func str() -> String {
+        switch self {
+        case .On:
+            return "On"
+        case .Auto:
+            return "Auto"
+        case .Off:
+            return "Off"
+        }
+    }
+}
+
