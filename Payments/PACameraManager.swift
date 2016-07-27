@@ -23,10 +23,10 @@ class PACameraManager: NSObject {
     var sessionQueue: dispatch_queue_t!
     var stillImageOutput: AVCaptureStillImageOutput?
 
-    init(sender: PACameraManagerDelegate) {
+    init(delegate: PACameraManagerDelegate) {
         super.init()
         
-        delegate = sender
+        self.delegate = delegate
 
         setObservers()
         initializeSession()

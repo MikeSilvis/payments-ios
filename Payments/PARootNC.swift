@@ -13,7 +13,8 @@ class PARootNC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = PAUser.currentUser.isLoggedIn ? [PARootNC.feedVC()] : [PARootNC.loginVC()]
+//        viewControllers = PAUser.currentUser.isLoggedIn ? [PARootNC.feedVC()] : [PARootNC.loginVC()]
+        viewControllers = [PARootNC.feedVC()]
     }
     
     //
