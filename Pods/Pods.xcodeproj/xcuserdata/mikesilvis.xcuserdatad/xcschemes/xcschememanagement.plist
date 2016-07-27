@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CameraManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2977B75483B912DEF8C35A8FCFB4B662</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4803AA9CED98764E41459468F9C03851</key>
+		<key>4FEFFF8BCFFF25082AF4A867552C5F52</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>632B2696A0AE6326D75EB87B2A3CFBB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBC3D5940D5EE74CCC301D0EDE4835C2</key>
+		<key>C2DAF8C3F623460C8F919C5AFC36311B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DAD2BEC8FC77AC61EC8A1393E445DADB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

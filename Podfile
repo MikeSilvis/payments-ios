@@ -7,6 +7,7 @@ target 'Payments' do
   pod 'AFNetworking'
   pod 'Fabric'
   pod 'FBSDKCoreKit'
+  pod 'CameraManager'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'Crashlytics'

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CameraManager
 
 private enum PARequestVCMode : Int {
     case Snap
@@ -27,7 +28,17 @@ class PARequestVC: UIViewController {
     @IBOutlet private weak var cameraView: UIView?
     @IBOutlet private weak var cameraButton: UIButton?
 
-    private var camera : PACameraManager?
+    private let cameraManager : CameraManager = {
+        let manager = CameraManager()
+        manager.cameraDevice = .Back
+        manager.cameraOutputMode = .StillImage
+        manager.cameraOutputQuality = .Medium
+        manager.flashMode = .Auto
+        manager.writeFilesToPhoneLibrary = false
+        
+        return manager
+    }()
+    
     private var preview : AVCaptureVideoPreviewLayer?
     
     private var mode : PARequestVCMode = .Snap {
@@ -45,29 +56,17 @@ class PARequestVC: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
 
-        camera?.stopCamera()
+//        camera?.stopCamera()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        camera?.startCamera()
+//        camera?.startCamera()
     }
 
     private func initializeCamera() {
-        camera = PACameraManager(delegate: self)
-        establishVideoPreviewArea()
-    }
-
-    private func establishVideoPreviewArea() {
-        preview = AVCaptureVideoPreviewLayer(session: camera?.session)
-        preview?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        
-        for subLayer in (cameraView?.layer.sublayers ?? []) {
-            subLayer.removeFromSuperlayer()
-        }
-
-        cameraView?.layer.addSublayer(preview!)
+        cameraManager.addPreviewLayerToView(cameraView!)
     }
 
     override func viewDidLayoutSubviews() {
@@ -89,13 +88,18 @@ class PARequestVC: UIViewController {
     }
     
     @IBAction private func didTapReverse(sender: AnyObject) {
+        cameraManager.cameraDevice = cameraManager.cameraDevice == .Front ? .Back : .Front
 
+    }
+    
+    @IBAction private func didTapFlash(sender: AnyObject) {
+        cameraManager.changeFlashMode()
     }
 
     @IBAction private func didTapSnap(sender: AnyObject) {
         mode = .Request
 
-        camera?.captureStillImage({ [weak self] (image) in
+        cameraManager.capturePictureWithCompletion({ [weak self] (image, error) -> Void in
             self?.performSegueWithIdentifier("confirmSegue", sender: image)
         })
     }
@@ -113,17 +117,17 @@ class PARequestVC: UIViewController {
     }
 }
 
-extension PARequestVC : PACameraManagerDelegate {
-    func cameraSessionConfigurationDidComplete() {
-        camera?.startCamera()
-    }
-
-    func cameraSessionDidBegin() {
-
-    }
-
-    func cameraSessionDidStop() {
-
-    }
-}
-
+//extension PARequestVC : PACameraManagerDelegate {
+//    func cameraSessionConfigurationDidComplete() {
+////        camera?.startCamera()
+//    }
+//
+//    func cameraSessionDidBegin() {
+//
+//    }
+//
+//    func cameraSessionDidStop() {
+//
+//    }
+//}
+//
