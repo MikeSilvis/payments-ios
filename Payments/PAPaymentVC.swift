@@ -37,24 +37,34 @@ class PAPaymentVC: UIViewController {
     }
     
     @IBAction private func didTapPay(sender: AnyObject) {
+        event?.makePayment({ [weak self] (success) in
+            success ? self?.successPayment() : self?.failedPayment()
+        })
+    }
+    
+    //
+    // MARK: Helpers
+    //
+    
+    private func successPayment() {
         guard let dollarAmount = self.event?.dollarAmount() else { return }
         
-        event?.makePayment({ [weak self] (success) in
-            if let strongSelf = self {
-                let alertController = UIAlertController(
-                             title: "Payment success!",
-                           message: "You successfully paid \(dollarAmount)!",
-                    preferredStyle: .Alert)
+        let alertController = UIAlertController(
+                     title: "Payment success!",
+                   message: "You successfully paid \(dollarAmount)!",
+            preferredStyle: .Alert)
 
-                let okAction = UIAlertAction(
-                      title: "OK",
-                      style: .Default,
-                    handler: nil)
+        let okAction = UIAlertAction(
+              title: "OK",
+              style: .Default,
+            handler: nil)
 
-                alertController.addAction(okAction)
+        alertController.addAction(okAction)
 
-                strongSelf.presentViewController(alertController, animated: true, completion: nil)
-            }
-        })
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    private func failedPayment() {
+        print("coming here")
     }
 }

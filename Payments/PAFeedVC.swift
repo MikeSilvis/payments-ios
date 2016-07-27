@@ -9,22 +9,38 @@
 import UIKit
 import Stripe
 
-class PAFeedVC: UIViewController, STPPaymentContextDelegate {
-    private weak var feedTVC : PAFeedHistoryTVC?
+protocol PAFeedVCDelegate : class {
+    func requestPayment(event : PAEvent)
+}
 
-    var paymentContext : STPPaymentContext?
+class PAFeedVC: UIViewController, STPPaymentContextDelegate {
+    private weak var feedTVC : PAFeedHistoryTVC? {
+        didSet {
+            feedTVC?.delegate = self
+        }
+    }
+
+    private lazy var paymentContext : STPPaymentContext = {
+        return STPPaymentContext(APIAdapter: StripeAPIClient.sharedClient,
+                              configuration: STPPaymentConfiguration.sharedConfiguration(),
+                                      theme: STPTheme.defaultTheme()
+        )
+    }()
+    
+    private lazy var userInfo : STPUserInformation = {
+        let info = STPUserInformation()
+        info.email = PAUser.currentUser.email
+        
+        return info
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.paymentContext = STPPaymentContext(APIAdapter: StripeAPIClient.sharedClient,
-                                               configuration: STPPaymentConfiguration.sharedConfiguration(),
-                                               theme: STPTheme.defaultTheme())
-        paymentContext?.delegate = self
-        paymentContext?.hostViewController = self
-        let userInfo = STPUserInformation()
-        userInfo.email = PAUser.currentUser.email
-        paymentContext?.prefilledInformation = userInfo
+        
+        paymentContext.delegate = self
+        paymentContext.hostViewController = self
+        paymentContext.prefilledInformation = userInfo
+        
         navigationItem.hidesBackButton = true
     }
     
@@ -46,9 +62,8 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
   }
 
     @IBAction func didTapAddCC(sender: AnyObject) {
-        self.paymentContext?.presentPaymentMethodsViewController()
+        paymentContext.presentPaymentMethodsViewController()
     }
-
 
     func paymentContext(paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: STPErrorBlock) {
 
@@ -63,5 +78,12 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
     }
 
     func paymentContext(paymentContext: STPPaymentContext, didFailToLoadWithError error: NSError) {
+        
     }
 }
+
+extension PAFeedVC : PAFeedVCDelegate {
+    func requestPayment(event: PAEvent) {
+    }
+}
+

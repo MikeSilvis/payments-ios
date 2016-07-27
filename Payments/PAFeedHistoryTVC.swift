@@ -9,7 +9,16 @@
 import UIKit
 
 class PAFeedHistoryTVC: UITableViewController {
-    private var nearbyCVC : PAFeedNearbyCVC?
+    private var nearbyCVC : PAFeedNearbyCVC? {
+        didSet {
+            nearbyCVC?.delegate = delegate
+        }
+    }
+    weak var delegate : PAFeedVCDelegate? {
+        didSet {
+            nearbyCVC?.delegate = delegate
+        }
+    }
     
     var pendingEvents : [PAEvent] = [] {
         didSet {

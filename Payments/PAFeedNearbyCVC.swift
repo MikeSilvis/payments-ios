@@ -11,6 +11,8 @@ import UIKit
 class PAFeedNearbyCVC: UICollectionViewController {
     private static let reuseIdentifier = "pendingRequestsCell"
     
+    weak var delegate : PAFeedVCDelegate?
+    
     var events : [PAEvent] = [] {
         didSet {
             collectionView?.reloadData()
@@ -35,9 +37,7 @@ class PAFeedNearbyCVC: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let event = events[indexPath.row]
-        
-        presentViewController(PAPaymentNC.instance(event), animated: true, completion: nil)
+        delegate?.requestPayment(events[indexPath.row])
     }
 
 }

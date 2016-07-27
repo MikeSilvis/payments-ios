@@ -22,6 +22,7 @@ class PAUser: NSObject {
     //
     
     private static let kUserDefaultAccessToken : String = "kUserDefaultAccessToken"
+    private static let kUserDefaultUserEmail   : String = "kUserDefaultUserEmail"
     
     //
     // MARK : Alias
@@ -45,7 +46,11 @@ class PAUser: NSObject {
         }
     }
     
-    var email : String?
+    var email : String? = NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultUserEmail) {
+        didSet {
+            NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultUserEmail)
+        }
+    }
     
     //
     // MARK : Requests
