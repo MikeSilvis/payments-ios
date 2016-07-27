@@ -11,6 +11,12 @@ import UIKit
 class PAUser: NSObject {
     static let currentUser = PAUser()
     
+    override init() {
+        super.init()
+        
+        PAHttpRequest.addAuthorizationHeader(accessToken)
+    }
+    
     //
     // MARK: Defaults
     //
