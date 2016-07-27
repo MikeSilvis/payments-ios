@@ -10,6 +10,8 @@
 		360CF6DE1D485A1F00B582A2 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CF6DD1D485A1F00B582A2 /* Payment.storyboard */; };
 		360CF6E01D485A3300B582A2 /* PAPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6DF1D485A3300B582A2 /* PAPaymentVC.swift */; };
 		360CF6E21D485A8F00B582A2 /* PAPaymentNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6E11D485A8F00B582A2 /* PAPaymentNC.swift */; };
+		360CF6E41D485EDB00B582A2 /* PARequestNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6E31D485EDB00B582A2 /* PARequestNC.swift */; };
+		360CF6E61D48601900B582A2 /* PARequestConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6E51D48601900B582A2 /* PARequestConfirmVC.swift */; };
 		36423E271D471B420024C61B /* PACameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36423E261D471B420024C61B /* PACameraManager.swift */; };
 		36423E291D471B8E0024C61B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36423E281D471B8E0024C61B /* AVFoundation.framework */; };
 		36423E2B1D471B930024C61B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36423E2A1D471B930024C61B /* Contacts.framework */; };
@@ -46,6 +48,8 @@
 		360CF6DD1D485A1F00B582A2 /* Payment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		360CF6DF1D485A3300B582A2 /* PAPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPaymentVC.swift; sourceTree = "<group>"; };
 		360CF6E11D485A8F00B582A2 /* PAPaymentNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPaymentNC.swift; sourceTree = "<group>"; };
+		360CF6E31D485EDB00B582A2 /* PARequestNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARequestNC.swift; sourceTree = "<group>"; };
+		360CF6E51D48601900B582A2 /* PARequestConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARequestConfirmVC.swift; sourceTree = "<group>"; };
 		36423E261D471B420024C61B /* PACameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACameraManager.swift; sourceTree = "<group>"; };
 		36423E281D471B8E0024C61B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		36423E2A1D471B930024C61B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -202,6 +206,8 @@
 				DD01736F1D471ACA0087929D /* PACreditCardsVC.swift */,
 				360CF6DF1D485A3300B582A2 /* PAPaymentVC.swift */,
 				360CF6E11D485A8F00B582A2 /* PAPaymentNC.swift */,
+				360CF6E31D485EDB00B582A2 /* PARequestNC.swift */,
+				360CF6E51D48601900B582A2 /* PARequestConfirmVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -432,7 +438,9 @@
 				36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */,
 				DD0173701D471ACA0087929D /* PACreditCardsVC.swift in Sources */,
 				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
+				360CF6E41D485EDB00B582A2 /* PARequestNC.swift in Sources */,
 				36423E271D471B420024C61B /* PACameraManager.swift in Sources */,
+				360CF6E61D48601900B582A2 /* PARequestConfirmVC.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
 				369FB3A21D466630002F8ADC /* PAFeedHistoryTVC.swift in Sources */,

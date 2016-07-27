@@ -31,7 +31,7 @@ struct PAFriend {
 }
 
 struct PAEvent {
-    var objectID        : NSNumber
+    var objectID        : NSNumber?
     var description     : String
     var amount_cents    : NSNumber
     var avatars         : [String]

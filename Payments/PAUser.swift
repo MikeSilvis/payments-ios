@@ -82,7 +82,7 @@ class PAUser: NSObject {
                 
             if let events = json["history"] as? [[String : AnyObject]] {
                 for event in events {
-                    let paEvent = PAEvent(objectID: event["id"] as! NSNumber, description: event["description"] as! String, amount_cents: event["amount_cents"] as! NSNumber, avatars: event["avatars"] as! [ String], state: .Sent)
+                    let paEvent = PAEvent(objectID: event["id"] as? NSNumber, description: event["description"] as! String, amount_cents: event["amount_cents"] as! NSNumber, avatars: event["avatars"] as! [ String], state: .Sent)
                     
                     historyEvents.append(paEvent)
                 }
@@ -90,7 +90,7 @@ class PAUser: NSObject {
             
             if let events = json["nearby"] as? [[String : AnyObject]] {
                 for event in events {
-                    let paEvent = PAEvent(objectID: event["id"] as! NSNumber, description: event["description"] as! String, amount_cents: event["amount_cents"] as! NSNumber, avatars: event["avatars"] as! [ String], state: .Sent)
+                    let paEvent = PAEvent(objectID: event["id"] as? NSNumber, description: event["description"] as! String, amount_cents: event["amount_cents"] as! NSNumber, avatars: event["avatars"] as! [ String], state: .Sent)
                     
                     nearbyEvents.append(paEvent)
                 }
@@ -102,8 +102,7 @@ class PAUser: NSObject {
     
     func createEvent(event : PAEvent, completion : PAEventCreateCompletion) {
         PAHttpRequest.dispatchPostRequest("events", params: event.asJSON()) { (success, json) in
-            print("Json response is: \(json)")
-            
+            completion(success: success)
         }
     }
     

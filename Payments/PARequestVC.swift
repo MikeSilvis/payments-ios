@@ -9,12 +9,33 @@
 import UIKit
 import AVFoundation
 
+private enum PARequestVCMode : Int {
+    case Snap
+    case Request
+
+    func cameraEnabled() -> Bool{
+        switch self {
+        case .Snap:
+            return true
+        case .Request:
+            return false
+        }
+    }
+}
+
 class PARequestVC: UIViewController {
     @IBOutlet private weak var cameraView: UIView?
+    @IBOutlet private weak var cameraButton: UIButton?
 
     private var camera : PACameraManager?
     private var preview : AVCaptureVideoPreviewLayer?
     
+    private var mode : PARequestVCMode = .Snap {
+        didSet {
+            cameraButton?.enabled = mode.cameraEnabled()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,14 +75,6 @@ class PARequestVC: UIViewController {
 
         preview?.frame = view.bounds
     }
-
-    func snapPhoto(completion: (UIImage?) -> Void) {
-        preview?.hidden = true
-
-        camera?.captureStillImage({ (image) -> Void in
-            completion(image)
-        })
-    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -70,16 +83,6 @@ class PARequestVC: UIViewController {
     //
     // MARK: Actions
     //
-
-    @IBAction private func didTapRequest(sender: AnyObject) {
-//        guard let dollarAmount = dollarAmountLabel?.text, let text = descriptionTextView?.text else { return }
-//
-//        let event = PAEvent(description: text, amount_cents: NSNumber(int: Int32(dollarAmount)!), avatars: [], state: .Sent)
-//
-//        PAUser.currentUser.createEvent(event) { (success) in
-//
-//        }
-    }
     
     @IBAction private func didTapDone(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -90,6 +93,23 @@ class PARequestVC: UIViewController {
     }
 
     @IBAction private func didTapSnap(sender: AnyObject) {
+        mode = .Request
+
+        camera?.captureStillImage({ [weak self] (image) in
+            self?.performSegueWithIdentifier("confirmSegue", sender: image)
+        })
+    }
+
+    //
+    // MARK: Helpers
+    //
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+
+        if let destVC = segue.destinationViewController as? PARequestConfirmVC, let image = sender as? UIImage {
+            destVC.image = image
+        }
     }
 }
 
