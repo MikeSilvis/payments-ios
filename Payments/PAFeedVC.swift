@@ -22,6 +22,9 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
                                                theme: STPTheme.defaultTheme())
         paymentContext?.delegate = self
         paymentContext?.hostViewController = self
+        let userInfo = STPUserInformation()
+        //userInfo.email = PAUser.currentUser.email
+        paymentContext?.prefilledInformation = userInfo
         navigationItem.hidesBackButton = true
     }
     
