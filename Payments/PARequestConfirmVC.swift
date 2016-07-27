@@ -32,9 +32,9 @@ class PARequestConfirmVC: UIViewController {
     @IBAction private func didTapConfirm(sender: AnyObject) {
         guard let amount = amountLabel?.text, let intAmount = Int(amount) else { return }
 
-        let event = PAEvent(objectID: nil, description: "hello world", amount_cents: intAmount, avatars: [], state: .Sent)
+        let event = PAEvent(photo: image!, amount_cents: intAmount)
 
-        PAUser.currentUser.createEvent(event) { [weak self] (success) in
+        event.create { [weak self] (success) in
             self?.view.endEditing(true)
 
             self?.dismissViewControllerAnimated(true, completion: nil)

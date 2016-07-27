@@ -29,7 +29,7 @@ class PAHistoryCell: UITableViewCell {
                 view.removeFromSuperview()
             }
             
-            for avatar in event.avatars {
+//            for avatar in event.avatars {
 //                PAHttpRequest.fetchImage(avatar, completion: { [weak self] (success, image) in
 //                    let kDefaultImageSize : CGFloat = 32
                 
@@ -54,11 +54,11 @@ class PAHistoryCell: UITableViewCell {
 //                    
 //                    self?.avatarStackView?.addArrangedSubview(snapShotImageView)
 //                    self?.avatarStackView?.addArrangedSubview(P)
-                    let avatarView = PAAvatarView()
-                    avatarView.friend = PAFriend(name: "", profilePicture: NSURL(string : avatar)!)
-                    avatarStackView?.addSubview(avatarView)
+//                    let avatarView = PAAvatarView()
+//                    avatarView.friend = PAFriend(name: "", profilePicture: NSURL(string : avatar)!)
+//                    avatarStackView?.addSubview(avatarView)
 //                })
-            }
+//            }
         }
     }
 

@@ -29,7 +29,6 @@ class PAUser: NSObject {
     //
     
     typealias PAEventGetCompletion = (success : Bool, pendingEvents : [PAEvent], pastEvents: [PAEvent]) -> ()
-    typealias PAEventCreateCompletion = (success : Bool) -> ()
     typealias PACreateUserCompletion = (success : Bool) -> ()
     
     lazy var isLoggedIn : Bool = {
@@ -81,33 +80,27 @@ class PAUser: NSObject {
     }
     
     func findEvents(completion: PAEventGetCompletion) {
+        func createEventFromResponse(json : [String : AnyObject]) -> PAEvent {
+            return PAEvent(objectID: json["id"] as! NSNumber, amount_cents: json["amount_cents"] as! NSNumber, avatars: json["avatars"] as! [String], photo: json["photo"] as? String)
+        }
+        
         PAHttpRequest.dispatchGetRequest("events", params: [:]) { (success, json) in
             var historyEvents : [PAEvent] = []
             var nearbyEvents : [PAEvent] = []
                 
             if let events = json["history"] as? [[String : AnyObject]] {
                 for event in events {
-                    let paEvent = PAEvent(objectID: event["id"] as? NSNumber, description: event["description"] as! String, amount_cents: event["amount_cents"] as! NSNumber, avatars: event["avatars"] as! [ String], state: .Sent)
-                    
-                    historyEvents.append(paEvent)
+                    historyEvents.append(createEventFromResponse(event))
                 }
             }
             
             if let events = json["nearby"] as? [[String : AnyObject]] {
                 for event in events {
-                    let paEvent = PAEvent(objectID: event["id"] as? NSNumber, description: event["description"] as! String, amount_cents: event["amount_cents"] as! NSNumber, avatars: event["avatars"] as! [ String], state: .Sent)
-                    
-                    nearbyEvents.append(paEvent)
+                    nearbyEvents.append(createEventFromResponse(event))
                 }
             }
 
             completion(success: success, pendingEvents: nearbyEvents, pastEvents: historyEvents)
-        }
-    }
-    
-    func createEvent(event : PAEvent, completion : PAEventCreateCompletion) {
-        PAHttpRequest.dispatchPostRequest("events", params: event.asJSON()) { (success, json) in
-            completion(success: success)
         }
     }
     

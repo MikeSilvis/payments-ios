@@ -32,20 +32,45 @@ struct PAFriend {
 
 struct PAEvent {
     var objectID        : NSNumber?
-    var description     : String
+    var description     : String?
     var amount_cents    : NSNumber
-    var avatars         : [String]
+    var avatars         : [String]?
     var state           : PAEventState = .Sent
+    var photo           : UIImage?
+    var photoURL        : NSURL?
     
     func dollarAmount() -> String {
         return "$\(amount_cents.floatValue / 100)"
     }
     
+    // TODO: Remove nill properties
     func asJSON() -> [String : AnyObject] {
         return [
-            "name"         : description,
-            "amount_cents" : amount_cents
+            "event" : [
+                "name"         : description!,
+                "amount_cents" : amount_cents,
+            ]
         ]
+    }
+    
+    //
+    // MARK: Custom Inits
+    //
+    
+    init(photo: UIImage, amount_cents: NSNumber) {
+        self.photo = photo
+        self.amount_cents = amount_cents
+        self.description = "heyo"
+    }
+    
+    init(objectID: NSNumber, amount_cents : NSNumber, avatars : [String], photo: String?) {
+        self.objectID = objectID
+        self.amount_cents = amount_cents
+        self.avatars = avatars
+        
+        if let photo = photo {
+            self.photoURL = NSURL(string: photo)
+        }
     }
     
     //
@@ -53,6 +78,7 @@ struct PAEvent {
     //
     
     typealias PAEventPaymentCompletion = (success : Bool) -> ()
+    typealias PAEventCreateCompletion = (success : Bool) -> ()
     
     //
     // MARK : Requests
@@ -63,4 +89,13 @@ struct PAEvent {
             completion(success: success)
         }
     }
+    
+    func create(completion : PAEventCreateCompletion) {
+        let file = UIImageJPEGRepresentation(photo!, 0.3)
+        
+        PAHttpRequest.dispatchMultipartRequest("events", file: file!, params: asJSON()) { (success, json) in
+            completion(success: success)
+        }
+    }
+    
 }
