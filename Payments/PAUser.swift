@@ -53,11 +53,11 @@ class PAUser: NSObject {
     }
     
     func findEvents(completion: PAEventGetCompletion) {
-        PAHttpRequest.dispatchGetRequest("events/history", params: [:]) { (success, json) in
-            var pastEvents : [PAEvent] = []
-            var pendingEvents : [PAEvent] = []
+        PAHttpRequest.dispatchGetRequest("events", params: [:]) { (success, json) in
+            var historyEvents : [PAEvent] = []
+            var nearbyEvents : [PAEvent] = []
                 
-            if let events = json["events"] as? [[String : AnyObject]] {
+            if let events = json["history"] as? [[String : AnyObject]] {
                 for event in events {
                     let paEvent = PAEvent(description: event["description"] as! String,
                                                amount_cents: event["amount_cents"] as! NSNumber,
@@ -65,12 +65,23 @@ class PAUser: NSObject {
                                                 state: .Sent
                     )
                     
-                    pastEvents.append(paEvent)
-                    pendingEvents.append(paEvent)
+                    historyEvents.append(paEvent)
                 }
             }
             
-            completion(success: success, pendingEvents: pendingEvents, pastEvents: pastEvents)
+            if let events = json["nearby"] as? [[String : AnyObject]] {
+                for event in events {
+                    let paEvent = PAEvent(description: event["description"] as! String,
+                                               amount_cents: event["amount_cents"] as! NSNumber,
+                                              avatars: event["avatars"] as! [String],
+                                                state: .Sent
+                    )
+
+                    nearbyEvents.append(paEvent)
+                }
+            }
+
+            completion(success: success, pendingEvents: nearbyEvents, pastEvents: historyEvents)
         }
     }
     

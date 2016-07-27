@@ -9,9 +9,13 @@
 import UIKit
 
 class PAEventRequestCell: UICollectionViewCell {
+    @IBOutlet private weak var descriptionLabel: UILabel?
+    @IBOutlet private weak var amountLabel: UILabel!
+
     var event : PAEvent? {
         didSet {
-            
+            amountLabel?.text = event?.dollarAmount()
+            descriptionLabel?.text = event?.description
         }
     }
     

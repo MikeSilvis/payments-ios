@@ -43,19 +43,19 @@
                                 <rect key="frame" x="0.0" y="196" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QAZ-zR-fMq" id="SSb-Nq-IHB">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-SD-t2n">
-                                            <rect key="frame" x="16" y="0.0" width="487" height="39"/>
+                                            <rect key="frame" x="16" y="0.0" width="487" height="40"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="La Playa..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-7j-Z84">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Playa..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-7j-Z84">
                                                     <rect key="frame" x="0.0" y="0.0" width="487" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiD-Rc-kzo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiD-Rc-kzo">
                                                     <rect key="frame" x="0.0" y="25" width="487" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,14 +226,23 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1o-TL-VVl" userLabel="Amount">
+                                            <rect key="frame" x="8" y="16" width="84" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="N1o-TL-VVl" secondAttribute="trailing" constant="8" id="0Fr-wS-qXo"/>
                                     <constraint firstItem="sTw-Dk-51i" firstAttribute="leading" secondItem="Psu-V5-P0P" secondAttribute="leading" constant="8" id="9qY-O6-ATi"/>
+                                    <constraint firstItem="N1o-TL-VVl" firstAttribute="leading" secondItem="Psu-V5-P0P" secondAttribute="leading" constant="8" id="CbK-Mv-NfI"/>
                                     <constraint firstAttribute="bottom" secondItem="sTw-Dk-51i" secondAttribute="bottom" constant="8" id="FjS-Dw-XSk"/>
                                     <constraint firstAttribute="trailing" secondItem="sTw-Dk-51i" secondAttribute="trailing" constant="8" id="kYQ-NZ-kEH"/>
+                                    <constraint firstItem="N1o-TL-VVl" firstAttribute="top" secondItem="Psu-V5-P0P" secondAttribute="topMargin" constant="8" id="uWr-a5-Y6E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -246,6 +255,10 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="amountLabel" destination="N1o-TL-VVl" id="J1N-GV-Da7"/>
+                                    <outlet property="descriptionLabel" destination="sTw-Dk-51i" id="sbR-L2-hPb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
