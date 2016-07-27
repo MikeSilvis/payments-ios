@@ -29,11 +29,7 @@ class PAHttpRequest: NSObject {
     typealias PAImageCompletion = (success : Bool, image : UIImage?) -> ()
     
     class func addAuthorizationHeader(token: String?) {
-        if let token = token {
-            sharedManager.requestSerializer.setValue(token, forHTTPHeaderField: "Authorization")
-        }
-        
-        sharedManager.requestSerializer.setValue(nil, forHTTPHeaderField: "Authorization")
+        sharedManager.requestSerializer.setValue(token, forHTTPHeaderField: "Authorization")
     }
     
     class func dispatchPostRequest(url : String, params : [String : AnyObject], completion: PAJSONCompletion) {
