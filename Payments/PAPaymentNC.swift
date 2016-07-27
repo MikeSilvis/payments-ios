@@ -15,7 +15,7 @@ class PAPaymentNC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let vc = viewControllers.first as? PAPaymentNC {
+        if let vc = viewControllers.first as? PAPaymentVC {
             vc.event = event
         }
     }

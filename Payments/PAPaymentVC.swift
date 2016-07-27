@@ -10,10 +10,18 @@ import UIKit
 
 class PAPaymentVC: UIViewController {
     
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel? {
+        didSet {
+            amountLabel?.text = event?.dollarAmount()
+        }
+    }
+    @IBOutlet private weak var descriptionLabel: UILabel? {
+        didSet {
+            descriptionLabel?.text = event?.description
+        }
+    }
     
-    private var event : PAEvent? {
+    var event : PAEvent? {
         didSet {
             amountLabel?.text = event?.dollarAmount()
             descriptionLabel?.text = event?.description
