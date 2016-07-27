@@ -47,4 +47,21 @@ struct PAEvent {
             "amount_cents" : amount_cents
         ]
     }
+    
+    //
+    // MARK : Alias
+    //
+    
+    typealias PAEventPaymentCompletion = (success : Bool) -> ()
+    
+    //
+    // MARK : Requests
+    //
+    
+    func makePayment(completion: PAEventPaymentCompletion) {
+        PAHttpRequest.dispatchPostRequest("events/\(objectID)/make_payment", params: [:]) { (success, json) in
+            print(json)
+            completion(success: success)
+        }
+    }
 }
