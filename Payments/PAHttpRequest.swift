@@ -49,7 +49,7 @@ class PAHttpRequest: NSObject {
     class func dispatchMultipartRequest(url : String, file: NSData, params: PAParams, completion: PAJSONCompletion) {
         let request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: completeURL(url), parameters: params,
                                                                                constructingBodyWithBlock: { (formData) in
-                                                                                    formData.appendPartWithFileData(file, name: "event[photo]", fileName: "image.jpeg", mimeType: "text/jpeg")
+                                                                                    formData.appendPartWithFileData(file, name: "event[photo]", fileName: "image.jpeg", mimeType: "image/jpg")
                                                                                },
                                                                                error: nil
         )
