@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 class PAHttpRequest: NSObject {
-    static let defaultDomain = "http://fahim.mac:3031"
+    static let defaultDomain = "https://paymentsapp.herokuapp.com"
     
     private static let sharedManager : AFHTTPSessionManager = {
         let manager = AFHTTPSessionManager(baseURL: NSURL(string : defaultDomain)!)
