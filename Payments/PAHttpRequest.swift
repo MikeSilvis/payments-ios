@@ -17,9 +17,9 @@ class PAHttpRequest: NSObject {
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         
-//        if let token = PAUser.currentUser.accessToken {
-//            manager.requestSerializer.setValue(token, forHTTPHeaderField: "Authorization")
-//        }
+        if let token = PAUser.currentUser.accessToken {
+            manager.requestSerializer.setValue(token, forHTTPHeaderField: "Authorization")
+        }
         
         return manager
     }()
@@ -27,6 +27,14 @@ class PAHttpRequest: NSObject {
     typealias PAJSONCompletion = (success : Bool, json : [String : AnyObject]) -> ()
     typealias PADataCompletion = (success : Bool, data : NSData?) -> ()
     typealias PAImageCompletion = (success : Bool, image : UIImage?) -> ()
+    
+    class func addAuthorizationHeader(token: String?) {
+        if let token = token {
+            sharedManager.requestSerializer.setValue(token, forHTTPHeaderField: "Authorization")
+        }
+        
+        sharedManager.requestSerializer.setValue(nil, forHTTPHeaderField: "Authorization")
+    }
     
     class func dispatchPostRequest(url : String, params : [String : AnyObject], completion: PAJSONCompletion) {
         PAHttpRequest.sharedManager.POST(completeURL(url), parameters: params, progress: nil,
@@ -59,8 +67,6 @@ class PAHttpRequest: NSObject {
                                          }
         )
     }
-    
-//    class func add
     
     class func completeURL(url : String) -> String {
         return "\(defaultDomain)/\(url)"

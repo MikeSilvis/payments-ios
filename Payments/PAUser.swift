@@ -11,7 +11,6 @@ import UIKit
 class PAUser: NSObject {
     static let currentUser = PAUser()
     
-    
     //
     // MARK: Defaults
     //
@@ -35,6 +34,8 @@ class PAUser: NSObject {
             NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultAccessToken)
             
             isLoggedIn = accessToken != nil
+            
+            PAHttpRequest.addAuthorizationHeader(accessToken)
         }
     }
     
