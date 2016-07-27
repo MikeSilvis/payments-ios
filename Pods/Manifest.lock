@@ -30,6 +30,9 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.13.1):
     - FBSDKCoreKit
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
   - SnapKit (0.21.1)
   - Stripe (8.0.3)
 
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - SDWebImage
   - SnapKit
   - Stripe
 
@@ -53,9 +57,10 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 2807fe0da2ddb49a1469da6d6ff597f99912980f
   FBSDKLoginKit: 6d350cb6a22d6956e9d078885de6ee8a0ebc51b4
   FBSDKShareKit: c9438df7573b33780ac8c3451201c5ebb260ffca
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   Stripe: f5accf7bee18785aa4e6c59d9d79c4604a83ed3b
 
-PODFILE CHECKSUM: 6c923eb533b19b0e2b5edddc0eb7faf6d603d22c
+PODFILE CHECKSUM: 01b4370b1a5eac27645d9035fecbff732ecf10db
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.0.0

@@ -13,4 +13,5 @@ target 'Payments' do
   pod 'Crashlytics'
   pod 'SnapKit'
   pod 'Stripe'
+  pod 'SDWebImage'
 end
