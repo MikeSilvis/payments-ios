@@ -17,6 +17,10 @@ class PAHttpRequest: NSObject {
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         
+//        if let token = PAUser.currentUser.accessToken {
+//            manager.requestSerializer.setValue(token, forHTTPHeaderField: "Authorization")
+//        }
+        
         return manager
     }()
     
@@ -55,6 +59,8 @@ class PAHttpRequest: NSObject {
                                          }
         )
     }
+    
+//    class func add
     
     class func completeURL(url : String) -> String {
         return "\(defaultDomain)/\(url)"

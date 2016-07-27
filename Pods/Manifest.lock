@@ -30,6 +30,7 @@ PODS:
   - FBSDKShareKit (4.13.1):
     - FBSDKCoreKit
   - SnapKit (0.21.1)
+  - Stripe (8.0.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - SnapKit
+  - Stripe
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -49,7 +51,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 6d350cb6a22d6956e9d078885de6ee8a0ebc51b4
   FBSDKShareKit: c9438df7573b33780ac8c3451201c5ebb260ffca
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
+  Stripe: f5accf7bee18785aa4e6c59d9d79c4604a83ed3b
 
-PODFILE CHECKSUM: 78830ceb68a3d6c8b32db0e6ccfad0b5baf45c7b
+PODFILE CHECKSUM: 097d237cbbb9e2cda8be1994cce5125f3c65e6ba
 
 COCOAPODS: 1.0.1

@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Stripe
 
-class PAFeedVC: UIViewController {
+class PAFeedVC: UIViewController, STPPaymentContextDelegate {
     private weak var feedTVC : PAFeedHistoryTVC?
+
+    var paymentContext : STPPaymentContext?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        self.paymentContext = STPPaymentContext(APIAdapter: StripeAPIClient.sharedClient,
+                                               configuration: STPPaymentConfiguration.sharedConfiguration(),
+                                               theme: STPTheme.defaultTheme())
+        paymentContext?.delegate = self
+        paymentContext?.hostViewController = self
         navigationItem.hidesBackButton = true
     }
     
@@ -32,5 +40,25 @@ class PAFeedVC: UIViewController {
         if let destVC = segue.destinationViewController as? PAFeedHistoryTVC {
             feedTVC = destVC
         }
+  }
+
+    @IBAction func didTapAddCC(sender: AnyObject) {
+        self.paymentContext?.presentPaymentMethodsViewController()
+    }
+
+
+    func paymentContext(paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: STPErrorBlock) {
+
+    }
+
+    func paymentContext(paymentContext: STPPaymentContext, didFinishWithStatus status: STPPaymentStatus, error: NSError?) {
+
+    }
+
+    func paymentContextDidChange(paymentContext: STPPaymentContext) {
+
+    }
+
+    func paymentContext(paymentContext: STPPaymentContext, didFailToLoadWithError error: NSError) {
     }
 }

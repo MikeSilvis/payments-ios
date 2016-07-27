@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import FBSDKCoreKit
+import Stripe
 
 @UIApplicationMain
 
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        STPPaymentConfiguration.sharedConfiguration().publishableKey = "pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+        STPPaymentConfiguration.sharedConfiguration().companyName = "Payments App"
         
         return true
     }

@@ -11,4 +11,5 @@ target 'Payments' do
   pod 'FBSDKShareKit'
   pod 'Crashlytics'
   pod 'SnapKit'
+  pod 'Stripe'
 end

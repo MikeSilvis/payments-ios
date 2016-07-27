@@ -120,14 +120,6 @@
             </objects>
             <point key="canvasLocation" x="3273" y="1628"/>
         </scene>
-        <!--profileVCStoryboard-->
-        <scene sceneID="xAj-7b-10w">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="profileVCStoryboard" id="tvM-Ze-QZb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gPv-la-Sop" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3072.5" y="1181"/>
-        </scene>
         <!--Payments-->
         <scene sceneID="CgN-3B-irt">
             <objects>
@@ -181,7 +173,7 @@
                     <navigationItem key="navigationItem" title="Payments" id="e4N-Br-0dy">
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="t3o-xC-bV2">
                             <connections>
-                                <segue destination="tvM-Ze-QZb" kind="presentation" id="pMa-jt-gGu"/>
+                                <action selector="didTapAddCC:" destination="X2o-0a-se0" id="mDA-rf-FNa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

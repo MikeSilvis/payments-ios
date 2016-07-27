@@ -35,6 +35,8 @@
 		36C112FA1D4711C0005B4B57 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112F91D4711C0005B4B57 /* Profile.storyboard */; };
 		36C112FC1D47122A005B4B57 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C112FB1D47122A005B4B57 /* Authentication.storyboard */; };
 		69EC3E0F2DA6B33C508CDB39 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */; };
+		DD0173701D471ACA0087929D /* PACreditCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD01736F1D471ACA0087929D /* PACreditCardsVC.swift */; };
+		DD0173741D4721DC0087929D /* StripeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0173731D4721DC0087929D /* StripeAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		5A7E8B82B1A372CFC00EFB10 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		7B9362A2401701D2D8A9C69F /* Pods_Payments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Payments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B066F6A9C76B79843CB145 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
+		DD01736F1D471ACA0087929D /* PACreditCardsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACreditCardsVC.swift; sourceTree = "<group>"; };
+		DD0173731D4721DC0087929D /* StripeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				364777A71D469152000B5144 /* Avatar */,
 				369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */,
 				36423E261D471B420024C61B /* PACameraManager.swift */,
+				DD0173731D4721DC0087929D /* StripeAPIClient.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				36C112ED1D4702A0005B4B57 /* PARootNC.swift */,
 				36C112EF1D47032C005B4B57 /* PALoginVC.swift */,
 				36C112F21D470D85005B4B57 /* PAFeedVC.swift */,
+				DD01736F1D471ACA0087929D /* PACreditCardsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 369FB39B1D465932002F8ADC /* Build configuration list for PBXNativeTarget "Payments" */;
 			buildPhases = (
+				2C5B46BA63F6F76117655364 /* [CP] Check Pods Manifest.lock */,
 				AD15201459160247C0FDE9D9 /* [CP] Check Pods Manifest.lock */,
 				369FB3831D465932002F8ADC /* Sources */,
 				369FB3841D465932002F8ADC /* Frameworks */,
@@ -236,6 +243,8 @@
 				CD9C3391E2F5C405B2D20EC9 /* [CP] Embed Pods Frameworks */,
 				C0C8F5B3DE0DBF8990A1F1D6 /* [CP] Copy Pods Resources */,
 				36C112EC1D46F7BA005B4B57 /* ShellScript */,
+				1F18D73A8F0EC7EF2DBADACC /* 📦 Embed Pods Frameworks */,
+				EA3D044748BDDC17A96FADE4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +307,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1F18D73A8F0EC7EF2DBADACC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Payments/Pods-Payments-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C5B46BA63F6F76117655364 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		36C112EC1D46F7BA005B4B57 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +395,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Payments/Pods-Payments-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA3D044748BDDC17A96FADE4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Payments/Pods-Payments-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -366,11 +420,13 @@
 				369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */,
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
 				36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */,
+				DD0173701D471ACA0087929D /* PACreditCardsVC.swift in Sources */,
 				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
 				36423E271D471B420024C61B /* PACameraManager.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAHistoryCell.swift in Sources */,
 				369FB3AA1D466E03002F8ADC /* PAEvent.swift in Sources */,
 				369FB3A21D466630002F8ADC /* PAFeedHistoryTVC.swift in Sources */,
+				DD0173741D4721DC0087929D /* StripeAPIClient.swift in Sources */,
 				36C112F31D470D85005B4B57 /* PAFeedVC.swift in Sources */,
 				369FB38B1D465932002F8ADC /* AppDelegate.swift in Sources */,
 				364777A61D468BD3000B5144 /* PAEventRequestCell.swift in Sources */,
