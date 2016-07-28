@@ -101,7 +101,7 @@ struct PAEvent {
     
     static func findEvents(completion: PAEventGetCompletion) {
         func createEventFromResponse(json : [String : AnyObject]) -> PAEvent {
-            return PAEvent(objectID: json["id"] as! NSNumber, amount_cents: json["amount_cents"] as! NSNumber, avatars: json["avatars"] as! [String], photo: json["photo"] as? String)
+            return PAEvent(objectID: json["id"] as! NSNumber, amount_cents: json["amount_cents"] as! NSNumber, avatars: json["avatars"] as! [String], photo: json["photo_url"] as? String)
         }
         
         PAHttpRequest.dispatchGetRequest("events", params: [:]) { (success, json) in

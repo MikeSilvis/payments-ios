@@ -51,6 +51,10 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
             self?.feedTVC?.pendingEvents = pendingEvents
             self?.feedTVC?.pastEvents = pastEvents
         }
+        
+        PAUser.currentUser.refresh { (success) in
+            // Don't really care for now
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

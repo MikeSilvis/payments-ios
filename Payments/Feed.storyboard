@@ -217,16 +217,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTw-Dk-51i" userLabel="Description">
-                                            <rect key="frame" x="8" y="121" width="84" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YNR-fN-CwU">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                        </imageView>
+                                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-Tl-us1" userLabel="Overlay View">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1o-TL-VVl" userLabel="Amount">
                                             <rect key="frame" x="8" y="16" width="84" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -235,10 +236,17 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="N1o-TL-VVl" secondAttribute="trailing" constant="8" id="0Fr-wS-qXo"/>
-                                    <constraint firstItem="sTw-Dk-51i" firstAttribute="leading" secondItem="Psu-V5-P0P" secondAttribute="leading" constant="8" id="9qY-O6-ATi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rl9-Tl-us1" secondAttribute="bottom" id="2SW-GN-fqX"/>
+                                    <constraint firstItem="Rl9-Tl-us1" firstAttribute="leading" secondItem="Psu-V5-P0P" secondAttribute="leading" id="6Xq-x6-cR6"/>
+                                    <constraint firstItem="YNR-fN-CwU" firstAttribute="top" secondItem="Psu-V5-P0P" secondAttribute="top" id="9c1-cH-Hhv"/>
                                     <constraint firstItem="N1o-TL-VVl" firstAttribute="leading" secondItem="Psu-V5-P0P" secondAttribute="leading" constant="8" id="CbK-Mv-NfI"/>
-                                    <constraint firstAttribute="bottom" secondItem="sTw-Dk-51i" secondAttribute="bottom" constant="8" id="FjS-Dw-XSk"/>
-                                    <constraint firstAttribute="trailing" secondItem="sTw-Dk-51i" secondAttribute="trailing" constant="8" id="kYQ-NZ-kEH"/>
+                                    <constraint firstItem="YNR-fN-CwU" firstAttribute="top" secondItem="Psu-V5-P0P" secondAttribute="topMargin" id="PWp-J9-Lft"/>
+                                    <constraint firstAttribute="trailing" secondItem="YNR-fN-CwU" secondAttribute="trailing" id="PaA-yC-YFW"/>
+                                    <constraint firstItem="Rl9-Tl-us1" firstAttribute="top" secondItem="Psu-V5-P0P" secondAttribute="top" id="ThK-n3-WFY"/>
+                                    <constraint firstItem="YNR-fN-CwU" firstAttribute="leading" secondItem="Psu-V5-P0P" secondAttribute="leading" id="Txj-4A-b9U"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rl9-Tl-us1" secondAttribute="trailing" id="Zog-OQ-lGM"/>
+                                    <constraint firstAttribute="bottom" secondItem="YNR-fN-CwU" secondAttribute="bottom" id="bQQ-Xw-ZCQ"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="YNR-fN-CwU" secondAttribute="bottom" id="f6Z-g6-aVw"/>
                                     <constraint firstItem="N1o-TL-VVl" firstAttribute="top" secondItem="Psu-V5-P0P" secondAttribute="topMargin" constant="8" id="uWr-a5-Y6E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -252,9 +260,16 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PWp-J9-Lft"/>
+                                        <exclude reference="f6Z-g6-aVw"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="amountLabel" destination="N1o-TL-VVl" id="J1N-GV-Da7"/>
-                                    <outlet property="descriptionLabel" destination="sTw-Dk-51i" id="sbR-L2-hPb"/>
+                                    <outlet property="eventImageView" destination="YNR-fN-CwU" id="ROT-xE-Oa7"/>
+                                    <outlet property="overlayView" destination="Rl9-Tl-us1" id="2cK-Iv-6o4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

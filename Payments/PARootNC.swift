@@ -14,10 +14,6 @@ class PARootNC: UINavigationController {
         super.viewDidLoad()
         
         viewControllers = PAUser.currentUser.isLoggedIn ? [PARootNC.feedVC()] : [PARootNC.loginVC()]
-        
-        PAUser.currentUser.refresh { (success) in
-            // Don't really care for now
-        }
     }
     
     //
