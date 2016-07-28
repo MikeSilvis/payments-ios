@@ -56,7 +56,7 @@ class PAUser: NSObject {
         }
     }
     
-    var balance_cents : String? = NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultBalanceCents) {
+    var balance_cents : Int? = NSUserDefaults.standardUserDefaults().integerForKey(PAUser.kUserDefaultBalanceCents) {
         didSet {
             NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultBalanceCents)
         }
@@ -108,12 +108,14 @@ class PAUser: NSObject {
             self.email = email
         }
         
-        if let balance_cents = userJSON["balance_cents"] as? String {
+        if let balance_cents = userJSON["balance_cents"] as? Int {
             self.balance_cents = balance_cents
         }
         
         completion(success: success)
     }
     
-    
+    func balanceDollarAmount() -> String {
+        return "$\(self.balance_cents! / 100)"
+    }
 }

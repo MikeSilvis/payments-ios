@@ -34,6 +34,8 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
         return info
     }()
 
+    @IBOutlet weak var ccBarButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,17 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
         paymentContext.prefilledInformation = userInfo
         
         navigationItem.hidesBackButton = true
+        
+        self.ccBarButton.title = ""
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        PAUser.currentUser.refresh { (success) in
+            // Don't really care for now
+            self.ccBarButton.title = "\(PAUser.currentUser.balanceDollarAmount())"
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -50,10 +63,6 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
         PAEvent.findEvents { [weak self] (success, pendingEvents, pastEvents) in
             self?.feedTVC?.pendingEvents = pendingEvents
             self?.feedTVC?.pastEvents = pastEvents
-        }
-        
-        PAUser.currentUser.refresh { (success) in
-            // Don't really care for now
         }
     }
     
