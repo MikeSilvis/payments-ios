@@ -47,7 +47,7 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        PAUser.currentUser.findEvents { [weak self] (success, pendingEvents, pastEvents) in
+        PAEvent.findEvents { [weak self] (success, pendingEvents, pastEvents) in
             self?.feedTVC?.pendingEvents = pendingEvents
             self?.feedTVC?.pastEvents = pastEvents
         }

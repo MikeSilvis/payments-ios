@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>632B2696A0AE6326D75EB87B2A3CFBB9</key>
+		<key>58D99C66BD4888A343A93B199900B232</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58EF45E15F068DC507C058373B5491F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>718374A6B259FA54EB547CEB945D8E14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>728EF30298F7970E9DF631EE6215D087</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C2DAF8C3F623460C8F919C5AFC36311B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DAD2BEC8FC77AC61EC8A1393E445DADB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

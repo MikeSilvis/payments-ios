@@ -79,6 +79,7 @@ struct PAEvent {
     
     typealias PAEventPaymentCompletion = (success : Bool) -> ()
     typealias PAEventCreateCompletion = (success : Bool) -> ()
+    typealias PAEventGetCompletion = (success : Bool, pendingEvents : [PAEvent], pastEvents: [PAEvent]) -> ()
     
     //
     // MARK : Requests
@@ -95,6 +96,31 @@ struct PAEvent {
         
         PAHttpRequest.dispatchMultipartRequest("events", file: file!, params: asJSON()) { (success, json) in
             completion(success: success)
+        }
+    }
+    
+    static func findEvents(completion: PAEventGetCompletion) {
+        func createEventFromResponse(json : [String : AnyObject]) -> PAEvent {
+            return PAEvent(objectID: json["id"] as! NSNumber, amount_cents: json["amount_cents"] as! NSNumber, avatars: json["avatars"] as! [String], photo: json["photo"] as? String)
+        }
+        
+        PAHttpRequest.dispatchGetRequest("events", params: [:]) { (success, json) in
+            var historyEvents : [PAEvent] = []
+            var nearbyEvents : [PAEvent] = []
+                
+            if let events = json["history"] as? [[String : AnyObject]] {
+                for event in events {
+                    historyEvents.append(createEventFromResponse(event))
+                }
+            }
+            
+            if let events = json["nearby"] as? [[String : AnyObject]] {
+                for event in events {
+                    nearbyEvents.append(createEventFromResponse(event))
+                }
+            }
+
+            completion(success: success, pendingEvents: nearbyEvents, pastEvents: historyEvents)
         }
     }
     
