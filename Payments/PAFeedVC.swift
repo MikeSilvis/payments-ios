@@ -34,7 +34,7 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
         return info
     }()
 
-    @IBOutlet weak var ccBarButton: UIBarButtonItem!
+    @IBOutlet private weak var ccBarButton: UIBarButtonItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,16 +44,14 @@ class PAFeedVC: UIViewController, STPPaymentContextDelegate {
         paymentContext.prefilledInformation = userInfo
         
         navigationItem.hidesBackButton = true
-        
-        self.ccBarButton.title = ""
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        PAUser.currentUser.refresh { (success) in
+        PAUser.currentUser.refresh { [weak self] (success) in
             // Don't really care for now
-            self.ccBarButton.title = "\(PAUser.currentUser.balanceDollarAmount())"
+            self?.ccBarButton?.title = PAUser.currentUser.balanceDollarAmount()
         }
     }
     

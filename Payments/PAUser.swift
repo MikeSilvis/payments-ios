@@ -36,10 +36,20 @@ class PAUser: NSObject {
     // MARK: Properties
     //
     
-    lazy var isLoggedIn : Bool = {
-        return self.accessToken != nil
-    }()
-
+    private(set) var isLoggedIn : Bool = (NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultAccessToken) != nil) {
+        didSet {
+            if !isLoggedIn && oldValue != isLoggedIn {
+                
+                accessToken = nil
+                email = nil
+                balance_cents = nil
+                photoURL = nil
+                
+                return
+            }
+        }
+    }
+    
     var accessToken : String? = NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultAccessToken) {
         didSet {
             NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultAccessToken)
@@ -91,6 +101,8 @@ class PAUser: NSObject {
     
     private func parseJSONResponse(success : Bool, json : [String : AnyObject], completion: PAUserCompletion) {
         guard let userJSON = json["user"] as? [String : AnyObject] else {
+            isLoggedIn = false
+            
             completion(success: false)
             return
         }
