@@ -10,8 +10,8 @@ import UIKit
 import SDWebImage
 
 class PAHistoryCell: UITableViewCell {
+    @IBOutlet private weak var descriptionImageView: UIImageView!
     @IBOutlet private weak var amountLabel: UILabel?
-    @IBOutlet private weak var descriptionLabel: UILabel?
     @IBOutlet private weak var avatarStackView: UIStackView? {
         didSet {
             avatarStackView?.transform = CGAffineTransformMakeScale(-1, 1)
@@ -23,8 +23,8 @@ class PAHistoryCell: UITableViewCell {
             guard let event = event else { return }
             
             amountLabel?.text = event.dollarAmount()
-            descriptionLabel?.text = event.description
             amountLabel?.textColor = event.state.color()
+            descriptionImageView?.sd_setImageWithURL(event.photoURL)
             
             for view in (avatarStackView?.subviews ?? []) {
                 view.removeFromSuperview()

@@ -15,7 +15,8 @@ class PAAvatarView: PADesignableControl {
         didSet {
             print("coming here with: \(imageView) and \(person?.photoURL)")
             
-            imageView?.sd_setImageWithURL(person?.photoURL)
+//            imageView?.sd_setImageWithURL(person?.photoURL)
+            imageView?.image = UIImage(named: "second")
         }
     }
     
