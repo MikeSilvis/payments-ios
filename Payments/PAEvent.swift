@@ -26,18 +26,27 @@ enum PAEventState : Int {
 }
 
 struct PAFriend {
-    var name           : String
-    var profilePicture : NSURL
+    var name           : String?
+    var photoURL       : NSURL?
+    
+    init(json : [String : AnyObject]) {
+        if let photoURL = json["avatar_image_url"] as? String {
+            self.photoURL = NSURL(string: photoURL)
+        }
+    }
 }
 
 struct PAEvent {
     var objectID        : NSNumber?
+    
+    // TODO: Remove
     var description     : String?
     var amount_cents    : NSNumber
-    var avatars         : [String]?
+    var members         : [PAFriend]?
     var state           : PAEventState = .Sent
     var photo           : UIImage?
     var photoURL        : NSURL?
+    var requester       : PAFriend?
     
     func dollarAmount() -> String {
         return "$\(amount_cents.floatValue / 100)"
@@ -63,10 +72,10 @@ struct PAEvent {
         self.description = "heyo"
     }
     
-    init(objectID: NSNumber, amount_cents : NSNumber, avatars : [String], photo: String?) {
+    init(objectID: NSNumber, amount_cents : NSNumber, members : [PAFriend], photo: String?, requester: PAFriend?) {
         self.objectID = objectID
         self.amount_cents = amount_cents
-        self.avatars = avatars
+        self.members = members
         
         if let photo = photo {
             self.photoURL = NSURL(string: photo)
@@ -101,7 +110,14 @@ struct PAEvent {
     
     static func findEvents(completion: PAEventGetCompletion) {
         func createEventFromResponse(json : [String : AnyObject]) -> PAEvent {
-            return PAEvent(objectID: json["id"] as! NSNumber, amount_cents: json["amount_cents"] as! NSNumber, avatars: json["avatars"] as! [String], photo: json["photo_url"] as? String)
+            let members = (json["members"] as! [[String : AnyObject]]).map({ PAFriend(json: $0) })
+            
+            return PAEvent(objectID: json["id"] as! NSNumber,
+                           amount_cents: json["amount_cents"] as! NSNumber,
+                           members: members,
+                           photo: json["photo_url"] as? String,
+                           requester: PAFriend(json: json["requestor"] as! [String : AnyObject])
+            )
         }
         
         PAHttpRequest.dispatchGetRequest("events", params: [:]) { (success, json) in

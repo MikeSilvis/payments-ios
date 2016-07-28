@@ -11,8 +11,11 @@ import UIKit
 class PAAvatarView: PADesignableControl {
     @IBOutlet weak var imageView: UIImageView?
     
-    var friend : PAFriend? {
+    var person : PAFriend? {
         didSet {
+            print("coming here with: \(imageView) and \(person?.photoURL)")
+            
+            imageView?.sd_setImageWithURL(person?.photoURL)
         }
     }
     

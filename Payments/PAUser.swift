@@ -24,6 +24,7 @@ class PAUser: NSObject {
     private static let kUserDefaultAccessToken      : String = "kUserDefaultAccessToken"
     private static let kUserDefaultEmailAddress     : String = "kUserDefaultEmailAddress"
     private static let kUserDefaultBalanceCents     : String = "kUserDefaultBalanceCents"
+    private static let kUserDefaultPhotoURL         : String = "kUserDefaultPhotoURL"
     
     //
     // MARK : Alias
@@ -58,6 +59,12 @@ class PAUser: NSObject {
     var balance_cents : String? = NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultBalanceCents) {
         didSet {
             NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultBalanceCents)
+        }
+    }
+    
+    var photoURL : String? = NSUserDefaults.standardUserDefaults().stringForKey(PAUser.kUserDefaultPhotoURL) {
+        didSet {
+            NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: PAUser.kUserDefaultPhotoURL)
         }
     }
     
