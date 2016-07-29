@@ -13,11 +13,6 @@ class PAAvatarView: PADesignableControl {
     
     var person : PAFriend? {
         didSet {
-//            print("coming here with: \(avatarImageView) and \(person?.photoURL)")
-            
-//            imageView?.image = UIImage(named: "second")
-            
-//            print("url is: \(person?.photoURL) with image view: \(avatarImageView)")
             avatarImageView?.sd_setImageWithURL(person?.photoURL)
         }
     }
