@@ -31,10 +31,15 @@ class PAHistoryCell: UITableViewCell {
             }
             
             for member in (event.members ?? []) {
-                let avatarView = PAAvatarView()
-                avatarView.person = member
+//                let avatarView = PAAvatarView()
+//                avatarView.person = member
+//                
+//                avatarView.snp_makeConstraints(closure: { (make) in
+//                    make.width.equalTo(32)
+//                    make.height.equalTo(32)
+//                })
                 
-                avatarStackView?.addSubview(avatarView)
+//                avatarStackView?.addSubview(avatarView)
             }
         }
     }

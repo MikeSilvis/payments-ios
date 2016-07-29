@@ -11,7 +11,7 @@
             <objects>
                 <tableViewController id="I7N-q1-j4V" customClass="PAFeedHistoryTVC" customModule="Payments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" id="TIx-pR-m3H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="511"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="599"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="InC-r7-EsG">
@@ -43,11 +43,11 @@
                                 <rect key="frame" x="0.0" y="196" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QAZ-zR-fMq" id="SSb-Nq-IHB">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-SD-t2n">
-                                            <rect key="frame" x="16" y="0.0" width="487" height="32"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-SD-t2n">
+                                            <rect key="frame" x="16" y="13" width="487" height="32"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uE3-K9-8B1">
                                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -74,13 +74,14 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQ6-fd-Xbs">
                                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="32" id="2sK-7u-lSf"/>
                                                         <constraint firstAttribute="height" constant="32" id="VBk-vi-V5E"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -134,24 +135,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVb-lh-chh">
-                                <rect key="frame" x="0.0" y="1" width="600" height="511"/>
+                                <rect key="frame" x="0.0" y="1" width="600" height="599"/>
                                 <connections>
                                     <segue destination="I7N-q1-j4V" kind="embed" id="gyu-Ob-FXt"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jv-LG-q6p">
-                                <rect key="frame" x="16" y="528" width="568" height="56"/>
+                                <rect key="frame" x="528" y="528" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="D6b-Ev-TMl"/>
                                     <constraint firstAttribute="height" constant="56" id="V16-K4-fie"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="Request">
+                                <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
+                                        <real key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -164,6 +166,8 @@
                             <constraint firstAttribute="trailing" secondItem="aVb-lh-chh" secondAttribute="trailing" id="35d-Oj-xqH"/>
                             <constraint firstItem="6jv-LG-q6p" firstAttribute="top" secondItem="aVb-lh-chh" secondAttribute="bottom" constant="16" id="69q-KI-kGK"/>
                             <constraint firstItem="aVb-lh-chh" firstAttribute="leading" secondItem="hFU-Ar-WXX" secondAttribute="leading" id="97e-lW-bOR"/>
+                            <constraint firstAttribute="trailing" secondItem="6jv-LG-q6p" secondAttribute="trailing" constant="16" id="AG9-ig-fR5"/>
+                            <constraint firstItem="AUk-Lj-Mt9" firstAttribute="top" secondItem="aVb-lh-chh" secondAttribute="bottom" id="MZW-h1-FF8"/>
                             <constraint firstItem="6jv-LG-q6p" firstAttribute="leading" secondItem="hFU-Ar-WXX" secondAttribute="leading" constant="16" id="QZX-TU-1Tg"/>
                             <constraint firstItem="aVb-lh-chh" firstAttribute="top" secondItem="ioh-kC-Cl2" secondAttribute="bottom" id="Uu5-ov-rTc"/>
                             <constraint firstItem="AUk-Lj-Mt9" firstAttribute="top" secondItem="6jv-LG-q6p" secondAttribute="bottom" constant="16" id="cqV-mK-LCI"/>
@@ -173,6 +177,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Uu5-ov-rTc"/>
+                                <exclude reference="69q-KI-kGK"/>
+                                <exclude reference="QZX-TU-1Tg"/>
+                                <exclude reference="nzv-cu-fnc"/>
                             </mask>
                         </variation>
                     </view>

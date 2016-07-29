@@ -76,6 +76,7 @@ struct PAEvent {
         self.objectID = objectID
         self.amount_cents = amount_cents
         self.members = members
+        self.requester = requester
         
         if let photo = photo {
             self.photoURL = NSURL(string: photo)
