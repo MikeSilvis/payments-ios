@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class PAUser: NSObject {
     static let currentUser = PAUser()
@@ -15,6 +16,10 @@ class PAUser: NSObject {
         super.init()
         
         PAHttpRequest.addAuthorizationHeader(accessToken)
+    }
+    
+    required init?(_ map: Map) {
+
     }
     
     //
@@ -133,5 +138,13 @@ class PAUser: NSObject {
         }
         
         return "$\(cents / 100)"
+    }
+}
+
+extension PAUser : Mappable {
+    func mapping(map: Map) {
+        accessToken     <- map["user.access_token"]
+        email           <- map["user.email"]
+        balance_cents   <- map["user.balance_cents"]
     }
 }

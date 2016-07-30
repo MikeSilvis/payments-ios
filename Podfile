@@ -5,12 +5,13 @@ use_frameworks!
 
 target 'Payments' do
   pod 'AFNetworking'
-  pod 'Fabric'
-  pod 'FBSDKCoreKit'
   pod 'CameraManager'
+  pod 'Crashlytics'
+  pod 'FBSDKCoreKit'
+  pod 'Fabric'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
-  pod 'Crashlytics'
+  pod 'ObjectMapper'
   pod 'SnapKit'
   pod 'Stripe'
   pod 'SDWebImage'

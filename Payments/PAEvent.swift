@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 enum PAEventState : Int {
     case Sent
@@ -36,6 +37,17 @@ struct PAFriend {
             self.photoURL = NSURL(string: photoURL)
         }
     }
+    
+    init?(_ map: Map) {
+
+    }
+}
+
+extension PAFriend : Mappable {
+    mutating func mapping(map: Map) {
+        name            <- map["name"]
+        photoURL        <- (map["avatar_image_url"], URLTransform())
+    }
 }
 
 struct PAEvent {
@@ -43,7 +55,7 @@ struct PAEvent {
     
     // TODO: Remove
     var description     : String?
-    var amount_cents    : NSNumber
+    var amount_cents    : NSNumber?
     var members         : [PAFriend]?
     var state           : PAEventState = .Sent
     var photo           : UIImage?
@@ -51,7 +63,11 @@ struct PAEvent {
     var requester       : PAFriend?
     
     func dollarAmount() -> String {
-        return "$\(amount_cents.floatValue / 100)"
+        guard let cents = amount_cents else {
+            return "$0"
+        }
+        
+        return "$\(cents.floatValue / 100)"
     }
     
     // TODO: Remove nill properties
@@ -59,7 +75,7 @@ struct PAEvent {
         return [
             "event" : [
                 "name"         : description!,
-                "amount_cents" : amount_cents,
+                "amount_cents" : amount_cents!,
             ]
         ]
     }
@@ -83,6 +99,10 @@ struct PAEvent {
         if let photo = photo {
             self.photoURL = NSURL(string: photo)
         }
+    }
+    
+    init?(_ map: Map) {
+
     }
     
     //
@@ -113,34 +133,30 @@ struct PAEvent {
     
     static func findEvents(completion: PAEventGetCompletion) {
         func createEventFromResponse(json : [String : AnyObject]) -> PAEvent {
-            let members = (json["members"] as! [[String : AnyObject]]).map({ PAFriend(json: $0) })
-            
-            return PAEvent(objectID: json["id"] as! NSNumber,
-                           amount_cents: json["amount_cents"] as! NSNumber,
-                           members: members,
-                           photo: json["photo_url"] as? String,
-                           requester: PAFriend(json: json["requestor"] as! [String : AnyObject])
-            )
+            return Mapper<PAEvent>().map(json)!
         }
         
         PAHttpRequest.dispatchGetRequest("events", params: [:]) { (success, json) in
-            var historyEvents : [PAEvent] = []
-            var nearbyEvents : [PAEvent] = []
+            if let historyJSON = json["history"] as? [[String : AnyObject]], nearbyJSON = json["nearby"] as? [[String : AnyObject]] {
+                let historyEvents = historyJSON.map({ Mapper<PAEvent>().map($0)! })
+                let nearbyEvents = nearbyJSON.map({ Mapper<PAEvent>().map($0)! })
                 
-            if let events = json["history"] as? [[String : AnyObject]] {
-                for event in events {
-                    historyEvents.append(createEventFromResponse(event))
-                }
+                completion(success: success, pendingEvents: nearbyEvents, pastEvents: historyEvents)
+                return
             }
             
-            if let events = json["nearby"] as? [[String : AnyObject]] {
-                for event in events {
-                    nearbyEvents.append(createEventFromResponse(event))
-                }
-            }
-
-            completion(success: success, pendingEvents: nearbyEvents, pastEvents: historyEvents)
+            completion(success: false, pendingEvents: [], pastEvents: [])
         }
     }
     
+}
+
+extension PAEvent : Mappable {
+    mutating func mapping(map: Map) {
+        objectID        <- map["id"]
+        amount_cents    <- map["amount_cents"]
+        members         <- map["members"]
+        photoURL        <- (map["photo_url"], URLTransform())
+        requester       <- map["requestor"]
+    }
 }

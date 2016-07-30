@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Payments.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,6 +67,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>19511EEC33A1007583E6AF7A7C124A65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
@@ -77,12 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58D99C66BD4888A343A93B199900B232</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>58EF45E15F068DC507C058373B5491F8</key>
+		<key>562881EAE375B53FF2F9CAF845E65B41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,17 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>718374A6B259FA54EB547CEB945D8E14</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>728EF30298F7970E9DF631EE6215D087</key>
+		<key>8876279ADC2B3D7F389723372C068BC8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9ECC6BAE57F2788A502367C85AC51356</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
