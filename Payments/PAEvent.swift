@@ -52,9 +52,6 @@ extension PAFriend : Mappable {
 
 struct PAEvent {
     var objectID        : NSNumber?
-    
-    // TODO: Remove
-    var description     : String?
     var amount_cents    : NSNumber?
     var members         : [PAFriend]?
     var state           : PAEventState = .Sent
@@ -74,7 +71,6 @@ struct PAEvent {
     func asJSON() -> [String : AnyObject] {
         return [
             "event" : [
-                "name"         : description!,
                 "amount_cents" : amount_cents!,
             ]
         ]
@@ -87,7 +83,6 @@ struct PAEvent {
     init(photo: UIImage, amount_cents: NSNumber) {
         self.photo = photo
         self.amount_cents = amount_cents
-        self.description = "heyo"
     }
     
     init(objectID: NSNumber, amount_cents : NSNumber, members : [PAFriend], photo: String?, requester: PAFriend?) {

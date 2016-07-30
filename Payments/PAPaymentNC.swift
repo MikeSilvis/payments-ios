@@ -18,6 +18,8 @@ class PAPaymentNC: UINavigationController {
         if let vc = viewControllers.first as? PAPaymentVC {
             vc.event = event
         }
+        
+        navigationBar.setClear()
     }
 
     class func instance(event : PAEvent) -> PAPaymentNC {

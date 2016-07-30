@@ -12,6 +12,11 @@
 		360CF6E21D485A8F00B582A2 /* PAPaymentNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6E11D485A8F00B582A2 /* PAPaymentNC.swift */; };
 		360CF6E41D485EDB00B582A2 /* PARequestNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6E31D485EDB00B582A2 /* PARequestNC.swift */; };
 		360CF6E61D48601900B582A2 /* PARequestConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CF6E51D48601900B582A2 /* PARequestConfirmVC.swift */; };
+		3622CDF21D4C56690024E4D1 /* PAPaymentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622CDF11D4C56690024E4D1 /* PAPaymentCVC.swift */; };
+		3622CDF41D4C57350024E4D1 /* PAPaymentFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622CDF31D4C57350024E4D1 /* PAPaymentFriendCell.swift */; };
+		3622CDF61D4C583F0024E4D1 /* extension-UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622CDF51D4C583F0024E4D1 /* extension-UINavigationController.swift */; };
+		3622CDFA1D4D42960024E4D1 /* PAComponentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622CDF91D4D42960024E4D1 /* PAComponentHeader.swift */; };
+		3622CDFC1D4D42AB0024E4D1 /* PAComponentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3622CDFB1D4D42AB0024E4D1 /* PAComponentHeader.xib */; };
 		36423E291D471B8E0024C61B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36423E281D471B8E0024C61B /* AVFoundation.framework */; };
 		36423E2B1D471B930024C61B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36423E2A1D471B930024C61B /* Contacts.framework */; };
 		364777A01D467E8C000B5144 /* extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647779F1D467E8C000B5144 /* extension-UIView.swift */; };
@@ -49,6 +54,11 @@
 		360CF6E11D485A8F00B582A2 /* PAPaymentNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPaymentNC.swift; sourceTree = "<group>"; };
 		360CF6E31D485EDB00B582A2 /* PARequestNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARequestNC.swift; sourceTree = "<group>"; };
 		360CF6E51D48601900B582A2 /* PARequestConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARequestConfirmVC.swift; sourceTree = "<group>"; };
+		3622CDF11D4C56690024E4D1 /* PAPaymentCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPaymentCVC.swift; sourceTree = "<group>"; };
+		3622CDF31D4C57350024E4D1 /* PAPaymentFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPaymentFriendCell.swift; sourceTree = "<group>"; };
+		3622CDF51D4C583F0024E4D1 /* extension-UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension-UINavigationController.swift"; sourceTree = "<group>"; };
+		3622CDF91D4D42960024E4D1 /* PAComponentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAComponentHeader.swift; sourceTree = "<group>"; };
+		3622CDFB1D4D42AB0024E4D1 /* PAComponentHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAComponentHeader.xib; sourceTree = "<group>"; };
 		36423E281D471B8E0024C61B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		36423E2A1D471B930024C61B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		3647779F1D467E8C000B5144 /* extension-UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension-UIView.swift"; sourceTree = "<group>"; };
@@ -99,10 +109,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3622CDF71D4D42750024E4D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3622CDF81D4D42810024E4D1 /* Header */,
+				364777A71D469152000B5144 /* Avatar */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		3622CDF81D4D42810024E4D1 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				3622CDF91D4D42960024E4D1 /* PAComponentHeader.swift */,
+				3622CDFB1D4D42AB0024E4D1 /* PAComponentHeader.xib */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
 		3647779E1D467E75000B5144 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				3647779F1D467E8C000B5144 /* extension-UIView.swift */,
+				3622CDF51D4C583F0024E4D1 /* extension-UINavigationController.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -152,6 +181,7 @@
 		369FB39E1D466403002F8ADC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3622CDF71D4D42750024E4D1 /* Components */,
 				36C112F11D4703DD005B4B57 /* Controllers */,
 				3647779E1D467E75000B5144 /* Extensions */,
 				369FB3AD1D467A16002F8ADC /* Helpers */,
@@ -166,6 +196,7 @@
 			children = (
 				369FB3A41D46675D002F8ADC /* PAEventHistoryCell.swift */,
 				364777A51D468BD3000B5144 /* PAEventRequestCell.swift */,
+				3622CDF31D4C57350024E4D1 /* PAPaymentFriendCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -183,7 +214,6 @@
 		369FB3AD1D467A16002F8ADC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				364777A71D469152000B5144 /* Avatar */,
 				369FB3AE1D467A20002F8ADC /* PADesignableControl.swift */,
 				DD0173731D4721DC0087929D /* StripeAPIClient.swift */,
 			);
@@ -205,6 +235,7 @@
 				360CF6E31D485EDB00B582A2 /* PARequestNC.swift */,
 				369FB38C1D465932002F8ADC /* PARequestVC.swift */,
 				36C112ED1D4702A0005B4B57 /* PARootNC.swift */,
+				3622CDF11D4C56690024E4D1 /* PAPaymentCVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +340,7 @@
 				360CF6DE1D485A1F00B582A2 /* Payment.storyboard in Resources */,
 				36C112FC1D47122A005B4B57 /* Authentication.storyboard in Resources */,
 				36C112F61D4711B0005B4B57 /* Feed.storyboard in Resources */,
+				3622CDFC1D4D42AB0024E4D1 /* PAComponentHeader.xib in Resources */,
 				364777AB1D469178000B5144 /* PAAvatarView.xib in Resources */,
 				369FB3971D465932002F8ADC /* LaunchScreen.storyboard in Resources */,
 				369FB3941D465932002F8ADC /* Assets.xcassets in Resources */,
@@ -449,8 +481,12 @@
 				369FB3AC1D4676DD002F8ADC /* PAHttpRequest.swift in Sources */,
 				369FB38F1D465932002F8ADC /* PAProfileVC.swift in Sources */,
 				36C112EE1D4702A0005B4B57 /* PARootNC.swift in Sources */,
+				3622CDFA1D4D42960024E4D1 /* PAComponentHeader.swift in Sources */,
+				3622CDF41D4C57350024E4D1 /* PAPaymentFriendCell.swift in Sources */,
+				3622CDF21D4C56690024E4D1 /* PAPaymentCVC.swift in Sources */,
 				DD0173701D471ACA0087929D /* PACreditCardsVC.swift in Sources */,
 				364777A91D469163000B5144 /* PAAvatarView.swift in Sources */,
+				3622CDF61D4C583F0024E4D1 /* extension-UINavigationController.swift in Sources */,
 				360CF6E41D485EDB00B582A2 /* PARequestNC.swift in Sources */,
 				360CF6E61D48601900B582A2 /* PARequestConfirmVC.swift in Sources */,
 				369FB3A51D46675D002F8ADC /* PAEventHistoryCell.swift in Sources */,
