@@ -45,7 +45,7 @@ class PAFeedHistoryTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath) as! PAHistoryCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath) as! PAEventHistoryCell
         cell.event = pastEvents[indexPath.row]
 
         return cell

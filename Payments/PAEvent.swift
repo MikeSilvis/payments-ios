@@ -30,6 +30,8 @@ struct PAFriend {
     var photoURL       : NSURL?
     
     init(json : [String : AnyObject]) {
+        self.name = json["name"] as? String
+        
         if let photoURL = json["avatar_image_url"] as? String {
             self.photoURL = NSURL(string: photoURL)
         }

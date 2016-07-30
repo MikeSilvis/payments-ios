@@ -128,6 +128,10 @@ class PAUser: NSObject {
     }
     
     func balanceDollarAmount() -> String {
-        return "$\(self.balance_cents! / 100)"
+        guard let cents = balance_cents else {
+            return "$0"
+        }
+        
+        return "$\(cents / 100)"
     }
 }

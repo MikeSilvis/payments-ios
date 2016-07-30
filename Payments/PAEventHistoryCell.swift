@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class PAHistoryCell: UITableViewCell {
+class PAEventHistoryCell: UITableViewCell {
     @IBOutlet private weak var descriptionImageView: UIImageView!
     @IBOutlet private weak var amountLabel: UILabel?
     @IBOutlet private weak var avatarStackView: UIStackView? {
@@ -31,15 +31,15 @@ class PAHistoryCell: UITableViewCell {
             }
             
             for member in (event.members ?? []) {
-//                let avatarView = PAAvatarView()
-//                avatarView.person = member
-//                
-//                avatarView.snp_makeConstraints(closure: { (make) in
-//                    make.width.equalTo(32)
-//                    make.height.equalTo(32)
-//                })
+                let avatarView = PAAvatarView()
+                avatarView.person = member
                 
-//                avatarStackView?.addSubview(avatarView)
+                avatarView.snp_makeConstraints(closure: { (make) in
+                    make.width.equalTo(32)
+                    make.height.equalTo(32)
+                })
+                
+                avatarStackView?.addArrangedSubview(avatarView)
             }
         }
     }
